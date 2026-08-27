@@ -25,7 +25,7 @@ from peft import PeftModel
 
 # Final balanced frame-based CSV dataset.
 INPUT_CSV = Path(
-    r"/home/marilyn/Downloads/Interaction-Readiness-Detection-Model-main/final/balanced_frame_based_dataset_linux.csv"
+    r"/home/marilyn/Downloads/data/balanced_frame_based_dataset_linux.csv"
 )
 
 # Inference will run only on rows belonging to this split.
@@ -33,9 +33,9 @@ INPUT_CSV = Path(
 INFERENCE_SPLIT = "test"
 
 # Folder where predictions, raw responses, and annotated images are saved.
-OUTPUT_DIR = Path(r"/home/marilyn/Downloads/Interaction-Readiness-Detection-Model-main/outputs/Qwen3VL_4B_Instruct_LoRA/inference_results")
+OUTPUT_DIR = Path(r"/home/marilyn/Downloads/Interaction-Readiness-Detection-Model-main/outputs/resized/Qwen3VL_4B_Instruct_LoRA/inference_results")
 
-LORA_CHECKPOINT = Path(r"/home/marilyn/Downloads/Interaction-Readiness-Detection-Model-main/outputs/Qwen3VL_4B_Instruct_LoRA/final_adapter")
+LORA_CHECKPOINT = Path(r"/home/marilyn/Downloads/Interaction-Readiness-Detection-Model-main/outputs/fineTuned_frameLevel/Qwen3-VL_4B_LoRA/final_adapter")
 
 MODEL_NAME = "Qwen/Qwen3-VL-4B-Instruct"
 LOAD_IN_4BIT = False
@@ -57,9 +57,9 @@ SPLIT_COLUMN = "split"
 IMAGE_BASE_DIRECTORY: Path | None = None
 
 # One of: "original", "processed", "normalized_1000".
-COORDINATE_MODE = "processed"
+COORDINATE_MODE = "original"
 
-SAVE_ANNOTATED = False
+SAVE_ANNOTATED = True
 OVERWRITE = False
 
 # Display the first N unique test frames before inference to verify image loading.
@@ -85,12 +85,12 @@ InteractionLabel = Literal[
 
 
 class PersonPrediction(TypedDict):
-    person_id:PROMPT int
+    person_id: int
     bbox: list[int]
     label: InteractionLabel
 
 
- = """
+PROMPT = """
 Analyze the provided image.
 
 Your task is to:
@@ -479,7 +479,9 @@ def infer_processed_image_size(
         return None
 
     _, grid_height, grid_width = grid
-    spatial_factor = 28
+    
+    # coordinates debugging: correction 1
+    spatial_factor = 32
     return int(grid_width * spatial_factor), int(grid_height * spatial_factor)
 
 
@@ -768,172 +770,164 @@ def preview_first_frames(frame_groups: list[tuple[tuple[Any, Any, Any], pd.DataF
 
 def main() -> None:
 
-    MODEL_NAMES = ["Qwen/Qwen3-VL-4B-Instruct", "Qwen/Qwen3-VL-8B-Instruct"]
-    
-    for MODEL_NAME in MODEL_NAMES:
-        load_model_and_processor(MODEL_NAME, LOAD_IN_4BIT)
-        
-    for MODEL_NAME in MODEL_NAMES:
-        
-        OUTPUT_DIR = Path(rf"/home/marilyn/Downloads/Interaction-Readiness-Detection-Model-main/outputs/{MODEL_NAME}")
 
-        if COORDINATE_MODE not in VALID_COORDINATE_MODES:
-            raise ValueError(
-                f"COORDINATE_MODE must be one of {sorted(VALID_COORDINATE_MODES)}."
-            )
-
-        dataset_all = load_csv_dataset(INPUT_CSV)
-
-        total_rows = len(dataset_all)
-        total_frames = dataset_all[
-            [SOURCE_DATASET_COLUMN, VIDEO_NAME_COLUMN, FRAME_NUMBER_COLUMN]
-        ].drop_duplicates().shape[0]
-        total_videos = dataset_all[
-            [SOURCE_DATASET_COLUMN, VIDEO_NAME_COLUMN]
-        ].drop_duplicates().shape[0]
-
-        dataset = filter_dataset_to_split(
-            dataset=dataset_all,
-            requested_split=INFERENCE_SPLIT,
+    if COORDINATE_MODE not in VALID_COORDINATE_MODES:
+        raise ValueError(
+            f"COORDINATE_MODE must be one of {sorted(VALID_COORDINATE_MODES)}."
         )
 
-        split_frames = dataset[
-            [SOURCE_DATASET_COLUMN, VIDEO_NAME_COLUMN, FRAME_NUMBER_COLUMN]
-        ].drop_duplicates().shape[0]
-        split_videos = dataset[
-            [SOURCE_DATASET_COLUMN, VIDEO_NAME_COLUMN]
-        ].drop_duplicates().shape[0]
+    dataset_all = load_csv_dataset(INPUT_CSV)
 
-        print(
-            f"Loaded {total_rows:,} person rows, {total_frames:,} unique frames, "
-            f"and {total_videos:,} videos."
-        )
-        print(
-            f"Using {INFERENCE_SPLIT!r} split: {len(dataset):,} person rows, "
-            f"{split_frames:,} unique frames, {split_videos:,} videos."
-        )
+    total_rows = len(dataset_all)
+    total_frames = dataset_all[
+        [SOURCE_DATASET_COLUMN, VIDEO_NAME_COLUMN, FRAME_NUMBER_COLUMN]
+    ].drop_duplicates().shape[0]
+    total_videos = dataset_all[
+        [SOURCE_DATASET_COLUMN, VIDEO_NAME_COLUMN]
+    ].drop_duplicates().shape[0]
 
-        frame_groups = build_frame_groups(dataset)
-        preview_first_frames(frame_groups)
+    dataset = filter_dataset_to_split(
+        dataset=dataset_all,
+        requested_split=INFERENCE_SPLIT,
+    )
 
-        OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-        raw_dir = OUTPUT_DIR / "raw_responses"
-        annotated_dir = OUTPUT_DIR / "annotated"
-        raw_dir.mkdir(parents=True, exist_ok=True)
-        if SAVE_ANNOTATED:
-            annotated_dir.mkdir(parents=True, exist_ok=True)
+    split_frames = dataset[
+        [SOURCE_DATASET_COLUMN, VIDEO_NAME_COLUMN, FRAME_NUMBER_COLUMN]
+    ].drop_duplicates().shape[0]
+    split_videos = dataset[
+        [SOURCE_DATASET_COLUMN, VIDEO_NAME_COLUMN]
+    ].drop_duplicates().shape[0]
 
-        predictions_path = OUTPUT_DIR / "predictions.jsonl"
-        if OVERWRITE and predictions_path.exists():
-            predictions_path.unlink()
+    print(
+        f"Loaded {total_rows:,} person rows, {total_frames:,} unique frames, "
+        f"and {total_videos:,} videos."
+    )
+    print(
+        f"Using {INFERENCE_SPLIT!r} split: {len(dataset):,} person rows, "
+        f"{split_frames:,} unique frames, {split_videos:,} videos."
+    )
 
-        completed_keys = load_completed_keys(predictions_path)
+    frame_groups = build_frame_groups(dataset)
+    preview_first_frames(frame_groups)
 
-        print(f"\nPerson-level rows in selected split: {len(dataset):,}")
-        print(f"Unique frames to process: {len(frame_groups):,}")
-        print(f"Loading model: {MODEL_NAME}")
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    raw_dir = OUTPUT_DIR / "raw_responses"
+    annotated_dir = OUTPUT_DIR / "annotated"
+    raw_dir.mkdir(parents=True, exist_ok=True)
+    if SAVE_ANNOTATED:
+        annotated_dir.mkdir(parents=True, exist_ok=True)
 
-        model, processor = load_model_and_processor(MODEL_NAME, LOAD_IN_4BIT)
+    predictions_path = OUTPUT_DIR / "predictions.jsonl"
+    if OVERWRITE and predictions_path.exists():
+        predictions_path.unlink()
 
-        for frame_index, (group_key, frame_rows) in enumerate(frame_groups, start=1):
-            source_dataset, video_name, frame_number = [
-                normalize_scalar(value) for value in group_key
-            ]
-            record_key = (str(source_dataset), str(video_name), str(frame_number))
+    completed_keys = load_completed_keys(predictions_path)
 
-            if record_key in completed_keys:
-                print(
-                    f"[{frame_index}/{len(frame_groups)}] Skipping completed "
-                    f"{source_dataset}/{video_name}/{frame_number}"
-                )
-                continue
+    print(f"\nPerson-level rows in selected split: {len(dataset):,}")
+    print(f"Unique frames to process: {len(frame_groups):,}")
+    print(f"Loading model: {MODEL_NAME}")
 
+    model, processor = load_model_and_processor(MODEL_NAME, LOAD_IN_4BIT)
+
+    for frame_index, (group_key, frame_rows) in enumerate(frame_groups, start=1):
+        source_dataset, video_name, frame_number = [
+            normalize_scalar(value) for value in group_key
+        ]
+        record_key = (str(source_dataset), str(video_name), str(frame_number))
+
+        if record_key in completed_keys:
             print(
-                f"[{frame_index}/{len(frame_groups)}] Processing "
+                f"[{frame_index}/{len(frame_groups)}] Skipping completed "
                 f"{source_dataset}/{video_name}/{frame_number}"
             )
+            continue
 
-            frame_path = str(frame_rows.iloc[0][FRAME_PATH_COLUMN])
-            ground_truth = ground_truth_people(frame_rows)
-            gt_frame_label = ground_truth_frame_label(frame_rows)
+        print(
+            f"[{frame_index}/{len(frame_groups)}] Processing "
+            f"{source_dataset}/{video_name}/{frame_number}"
+        )
 
-            image_error: str | None = None
-            parse_error: str | None = None
-            predictions: list[PersonPrediction] = []
-            processed_size: tuple[int, int] | None = None
-            raw_response = ""
-            image: Image.Image | None = None
-            image_width: int | None = None
-            image_height: int | None = None
+        frame_path = str(frame_rows.iloc[0][FRAME_PATH_COLUMN])
+        ground_truth = ground_truth_people(frame_rows)
+        gt_frame_label = ground_truth_frame_label(frame_rows)
 
+        image_error: str | None = None
+        parse_error: str | None = None
+        predictions: list[PersonPrediction] = []
+        processed_size: tuple[int, int] | None = None
+        raw_response = ""
+        image: Image.Image | None = None
+        image_width: int | None = None
+        image_height: int | None = None
+
+        try:
+            image = load_frame_image(frame_path)
+            image_width, image_height = image.size
+        except (FileNotFoundError, OSError, TypeError, ValueError) as exc:
+            image_error = str(exc)
+            print(f"Image loading failed: {exc}")
+
+        if image is not None:
             try:
-                image = load_frame_image(frame_path)
-                image_width, image_height = image.size
-            except (FileNotFoundError, OSError, TypeError, ValueError) as exc:
-                image_error = str(exc)
-                print(f"Image loading failed: {exc}")
+                raw_response, processed_size = run_inference(
+                    image=image,
+                    model=model,
+                    processor=processor,
+                )
 
-            if image is not None:
-                try:
-                    raw_response, processed_size = run_inference(
-                        image=image,
-                        model=model,
-                        processor=processor,
-                    )
+                response_json = extract_json_object(raw_response)
+                predictions = validate_predictions(response_json)
+                predictions = rescale_predictions(
+                    predictions=predictions,
+                    original_size=image.size,
+                    processed_size=processed_size,
+                )
+            except (OSError, TypeError, ValueError, RuntimeError) as exc:
+                parse_error = str(exc)
+                print(f"Inference/parsing failed: {exc}")
 
-                    response_json = extract_json_object(raw_response)
-                    predictions = validate_predictions(response_json)
-                    predictions = rescale_predictions(
-                        predictions=predictions,
-                        original_size=image.size,
-                        processed_size=processed_size,
-                    )
-                except (OSError, TypeError, ValueError, RuntimeError) as exc:
-                    parse_error = str(exc)
-                    print(f"Inference/parsing failed: {exc}")
+        safe_stem = "__".join(
+            safe_filename_part(value)
+            for value in (source_dataset, video_name, frame_number)
+        )
 
-            safe_stem = "__".join(
-                safe_filename_part(value)
-                for value in (source_dataset, video_name, frame_number)
-            )
+        raw_path: Path | None = None
+        if raw_response:
+            raw_path = raw_dir / f"{safe_stem}.txt"
+            raw_path.write_text(raw_response, encoding="utf-8")
 
-            raw_path: Path | None = None
-            if raw_response:
-                raw_path = raw_dir / f"{safe_stem}.txt"
-                raw_path.write_text(raw_response, encoding="utf-8")
+        record: dict[str, Any] = {
+            "source_dataset": source_dataset,
+            "video_name": video_name,
+            "frame_number": frame_number,
+            "frame_path": frame_path,
+            "image_width": image_width,
+            "image_height": image_height,
+            "model": MODEL_NAME,
+            "dataset_split": INFERENCE_SPLIT,
+            "coordinate_mode": COORDINATE_MODE,
+            "processed_image_size": (
+                {"width": processed_size[0], "height": processed_size[1]}
+                if processed_size is not None
+                else None
+            ),
+            "ground_truth_frame_label": gt_frame_label,
+            "ground_truth_people": ground_truth,
+            "predicted_people": predictions,
+            "image_error": image_error,
+            "parse_error": parse_error,
+            "raw_response_path": str(raw_path) if raw_path else None,
+        }
+        save_record(predictions_path, record)
 
-            record: dict[str, Any] = {
-                "source_dataset": source_dataset,
-                "video_name": video_name,
-                "frame_number": frame_number,
-                "frame_path": frame_path,
-                "image_width": image_width,
-                "image_height": image_height,
-                "model": MODEL_NAME,
-                "dataset_split": INFERENCE_SPLIT,
-                "coordinate_mode": COORDINATE_MODE,
-                "processed_image_size": (
-                    {"width": processed_size[0], "height": processed_size[1]}
-                    if processed_size is not None
-                    else None
-                ),
-                "ground_truth_frame_label": gt_frame_label,
-                "ground_truth_people": ground_truth,
-                "predicted_people": predictions,
-                "image_error": image_error,
-                "parse_error": parse_error,
-                "raw_response_path": str(raw_path) if raw_path else None,
-            }
-            save_record(predictions_path, record)
+        if SAVE_ANNOTATED and image is not None:
+            annotated = annotate_image(image, predictions)
+            annotated.save(annotated_dir / f"{safe_stem}.jpg", quality=95)
 
-            if SAVE_ANNOTATED and image is not None:
-                annotated = annotate_image(image, predictions)
-                annotated.save(annotated_dir / f"{safe_stem}.jpg", quality=95)
+        if image is not None:
+            image.close()
 
-            if image is not None:
-                image.close()
-
-        print(f"\nPredictions saved to: {predictions_path}")
+    print(f"\nPredictions saved to: {predictions_path}")
 
 
 if __name__ == "__main__":
