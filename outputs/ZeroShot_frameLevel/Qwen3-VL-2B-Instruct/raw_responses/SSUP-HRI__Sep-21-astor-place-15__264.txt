@@ -1,0 +1,31 @@
+```json
+{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [315, 402, 372, 610],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox": [412, 475, 444, 570],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 3,
+      "bbox": [470, 420, 520, 570],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 4,
+      "bbox": [705, 481, 758, 638],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 5,
+      "bbox": [758, 448, 818, 640],
+      "label": "interaction_ready"
+    }
+  ]
+}
+```

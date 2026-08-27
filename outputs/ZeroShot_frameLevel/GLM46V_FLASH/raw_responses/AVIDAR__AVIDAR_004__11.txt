@@ -1,0 +1,16 @@
+<think>Got it, let's analyze the image. First, look for human people. In the image, there's a person on the right side, partially visible. So we need to detect that person.
+
+First, detect the human: the person on the right, from the head down to the torso. Let's find the bounding box. The person is on the right edge, so x1 is around 920 (since the right side is 998 maybe), y1 around 58, x2 998, y2 997. Then check the label. The person is standing, facing forward, so likely "interaction_ready" because they seem available, maybe waiting or approaching. Wait, but we need to check the interaction readiness. The person is not engaged in any activity, just standing. So label as "interaction_ready".
+
+Now, check if there are other people. The image has only one visible person. So the "people" array will have one object.
+
+Now, structure the JSON as per the instructions.</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [920, 58, 998, 997],
+      "label": "interaction_ready"
+    }
+  ]
+}<|end_of_box|>

@@ -1,0 +1,22 @@
+<think>Got it, let's analyze the image. First, detect human people. There's one person visible: the woman walking in the room. Now, check her interaction readiness. She's walking, looking towards the camera maybe? Wait, the task says "interaction-ready" if available to begin interaction. She's walking, not engaged in any ongoing interaction. So her label would be "not_interaction_ready"? Wait, wait. Let's check the definitions again.
+
+"not_interaction_ready": The person does not appear ready to begin an interaction. This includes walking away, occupied, ignoring, oriented elsewhere, or no intention to engage.
+
+"interaction_ready": available, willing, prepared to begin. Like orienting toward partner, approaching, waiting, seeking attention, eye contact.
+
+The woman is walking, so she's not in a state of being ready to begin an interaction (since she's moving, not waiting or approaching someone). So her label is "not_interaction_ready".
+
+Now, bounding box: find the coordinates. Looking at the image, the woman is from around x=325, y=325, to x=508, y=993. So bbox [325, 325, 508, 993].
+
+So the people array will have one object.
+
+Now, format the JSON as required.</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [325, 325, 508, 993],
+      "label": "not_interaction_ready"
+    }
+  ]
+}<|end_of_box|>

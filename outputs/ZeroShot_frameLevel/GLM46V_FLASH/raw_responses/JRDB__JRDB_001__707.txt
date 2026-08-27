@@ -1,0 +1,10 @@
+<think>Got it, let's analyze the image. First, detect human people. In the image, there's a man on the left side. Let's check his position. He's standing near the counter. Now, determine the bounding box. The man is from top-left to bottom-right. Let's estimate coordinates. The man's left is near x=0, y=0, right around x=150, y=986 maybe. So bbox [0, 0, 150, 986]? Wait, looking at the image, the man is on the left, so x1=0, y1=0, x2=149, y2=986. Then his interaction readiness: he's standing, maybe not interacting with anyone yet, so "not_interaction_ready"? Because he's just standing there, not oriented towards anyone to interact. So the only person is this man. So create the JSON with one person.</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [0, 0, 150, 986],
+      "label": "not_interaction_ready"
+    }
+  ]
+}<|end_of_box|>

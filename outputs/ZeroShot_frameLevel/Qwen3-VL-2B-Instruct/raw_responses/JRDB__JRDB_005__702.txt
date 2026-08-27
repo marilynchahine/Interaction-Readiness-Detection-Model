@@ -1,0 +1,51 @@
+```json
+{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [0, 0, 104, 999],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox": [82, 145, 212, 835],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 3,
+      "bbox": [225, 237, 325, 710],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 4,
+      "bbox": [435, 269, 515, 630],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 5,
+      "bbox": [488, 237, 604, 685],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 6,
+      "bbox": [614, 0, 800, 999],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 7,
+      "bbox": [820, 162, 944, 775],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 8,
+      "bbox": [758, 232, 820, 731],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 9,
+      "bbox": [944, 225, 1000, 588],
+      "label": "interaction_ready"
+    }
+  ]
+}
+```

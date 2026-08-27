@@ -1,0 +1,10 @@
+<think>Got it, let's analyze the image. First, detect the human person. There's one woman in the image. Now, find her bounding box. Looking at the image, she's standing, so we need to find the coordinates. Let's estimate: she's from around x=528, y=279, to x=687, y=997 maybe? Then check the interaction-readiness label. She's looking up, not interacting with anyone, so "not_interaction_ready". Now, check if there are other people—no, only one. So the JSON should have one person with that label.</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [528, 279, 687, 997],
+      "label": "not_interaction_ready"
+    }
+  ]
+}<|end_of_box|>

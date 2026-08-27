@@ -1,0 +1,42 @@
+<think>Got it, let's analyze the image. First, detect the human people. There are two people clearly visible: a man on the left and a woman on the right.
+
+For the first person (man): He's standing, facing forward, smiling? Wait, looking at the image, he's looking at the camera. His posture is upright, hands clasped. So is he interaction_ready? The label definitions: interaction_ready includes orienting toward interaction partner (which is the camera, so we can consider that). So yes, he's interaction_ready.
+
+Second person (woman): She's smiling at the camera, arms crossed. She's also oriented toward the camera, so interaction_ready.
+
+Now, create the JSON with two entries.
+
+Check the bounding boxes. Let's estimate the coordinates. The man is on the left: x1 around 247, y1 around 96, x2 around 466, y2 around 997. The woman is on the right: x1 around 586, y1 around 180, x2 around 798, y2 around 997.
+
+Now assign labels. Both are interaction_ready because they're facing the camera, likely ready for interaction.
+
+So the JSON would be:
+
+{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [247, 96, 466, 997],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox": [586, 180, 798, 997],
+      "label": "interaction_ready"
+    }
+  ]
+}</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [247, 96, 466, 997],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox": [586, 180, 798, 997],
+      "label": "interaction_ready"
+    }
+  ]
+}<|end_of_box|>

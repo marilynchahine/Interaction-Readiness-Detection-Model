@@ -1,0 +1,10 @@
+<think>Got it, let's analyze the image. First, detect the human person. There's one person visible: the woman walking in the room. Now, determine her bounding box. Looking at the image, she's from around x=468 to x=635, y=292 to y=997 maybe? Let's check. Then, her interaction-readiness: she's walking, not oriented towards anyone, so "not_interaction_ready". Now, check if there are other people. No, only one person. So the JSON should have one object.</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [468, 292, 635, 997],
+      "label": "not_interaction_ready"
+    }
+  ]
+}<|end_of_box|>

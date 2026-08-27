@@ -1,0 +1,28 @@
+<think>Got it, let's analyze the image. First, look for human people. In the image, there's a person on the left side, partially visible (maybe a customer or staff). Then there's another person behind the counter, maybe a staff member.
+
+First, detect the first person: the leftmost person, wearing dark clothing, standing near the counter. Their bounding box would be from the left edge. Let's estimate coordinates. The first person is on the left, so x1 around 0, y1 around 0, x2 around 110, y2 around 995 (since they're standing). So person_id 1.
+
+Second, the person behind the counter, maybe a staff member. Looking at the image, there's a person behind the counter, visible from the head. So that's another person. Let's find their bounding box. The person behind the counter is around x1 162, y1 202, x2 210, y2 262 (approx). So person_id 2.
+
+Now, check the labels. For the first person (left), they are standing near the counter, maybe waiting or approaching? The person is facing the counter, so likely "interaction_ready". The second person (behind counter) is probably working, not ready for interaction, so "not_interaction_ready".
+
+Now, count people: there are two visible people. So we need to include both. Let's confirm:
+
+- Person 1: left side, visible from torso down. Bbox [0, 0, 118, 995] maybe. Label "interaction_ready".
+- Person 2: behind counter, head visible. Bbox [162, 202, 210, 262]. Label "not_interaction_ready".
+
+Are there any other people? The image doesn't show more. So total 2 people. Now format the JSON as required.</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [0, 0, 118, 995],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox": [162, 202, 210, 262],
+      "label": "not_interaction_ready"
+    }
+  ]
+}<|end_of_box|>

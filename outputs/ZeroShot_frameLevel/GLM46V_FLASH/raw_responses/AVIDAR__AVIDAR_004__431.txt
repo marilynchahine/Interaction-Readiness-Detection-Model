@@ -1,0 +1,10 @@
+<think>Got it, let's analyze the image. First, detect the human people. There's one person visible: the woman in the blue sweater. Now, check her position. She's walking, so we need to find her bounding box. Let's estimate the coordinates. She's in the center-right area. Then, determine the interaction-readiness label. She's walking, not oriented towards anyone, so "not_interaction_ready". Now, create the JSON with one person.</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [417, 220, 620, 997],
+      "label": "not_interaction_ready"
+    }
+  ]
+}<|end_of_box|>

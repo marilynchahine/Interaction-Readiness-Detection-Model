@@ -1,0 +1,56 @@
+<think>Got it, let's analyze the image. First, detect human people.
+
+Looking at the image: there's a person on the left side, partially visible (maybe standing near the counter). Then on the right side, there's another person behind the counter or near it. Let's check each.
+
+First person: left side, dark clothing, standing near the counter. So bounding box for that person. Then the second person on the right, maybe behind the display case.
+
+Now, check their interaction readiness.
+
+First person (left): They are standing, maybe waiting or not engaged. Let's see orientation. The left person is facing towards the counter, maybe not ready? Wait, but need to check the labels.
+
+Wait, the left person is partially visible, but we need to see if they are interaction_ready or not. Let's think about the definitions.
+
+Second person on the right: maybe behind the counter, possibly working, so not ready.
+
+So first person: left, maybe not interaction_ready. Second person: right, not interaction_ready.
+
+Now, check if there are more than 5, but here only two. So we need to include both.
+
+Now, create the JSON.
+
+First person: person_id 1, bbox for left person. Let's estimate coordinates. The left person is from x=0, y=0 to maybe x=92, y=956 (since they are on the left edge). So [0, 0, 92, 956].
+
+Second person: right side, maybe [945, 206, 1000, 386] (since they are behind the display case on the right).
+
+Now, labels: both not_interaction_ready because they are not engaged in interaction.
+
+So the JSON would be:
+
+{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [0, 0, 92, 956],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox": [945, 206, 1000, 386],
+      "label": "not_interaction_ready"
+    }
+  ]
+}</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [0, 0, 92, 956],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox": [945, 206, 1000, 386],
+      "label": "not_interaction_ready"
+    }
+  ]
+}<|end_of_box|>

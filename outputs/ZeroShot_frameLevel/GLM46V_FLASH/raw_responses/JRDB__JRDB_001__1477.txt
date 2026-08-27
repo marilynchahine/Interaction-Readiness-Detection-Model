@@ -1,0 +1,31 @@
+<think>Got it, let's analyze the image. First, detect human people.
+
+Looking at the image: there's a person on the left side, likely a customer. Then there's a person behind the counter, maybe a staff member. Let's check each.
+
+First person: leftmost, standing near the counter, facing towards the counter. So that's a person. Their bounding box: let's estimate. The left person is from x=0, y=112, to maybe x=94, y=872. So [0, 112, 94, 872].
+
+Second person: behind the counter, the staff. So [374, 175, 438, 272].
+
+Now, check their interaction readiness. The left person is likely a customer approaching, so interaction_ready. The staff behind the counter: maybe not ready yet, since they're behind the counter, maybe waiting or working. So not_interaction_ready.
+
+Are there any other people? Maybe another person in the background, but not clearly visible. So only two people.
+
+Now, format the JSON.
+
+Check the labels: first person is interaction_ready, second is not_interaction_ready.
+
+So the people array will have two entries.</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [0, 112, 94, 872],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox": [374, 175, 438, 272],
+      "label": "not_interaction_ready"
+    }
+  ]
+}<|end_of_box|>

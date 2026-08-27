@@ -1,0 +1,11 @@
+Frame level:
+Qwen3-VL 2B - zero-shot
+Qwen3-VL 4B - zero-shot
+Qwen3-VL 8B - zero-shot
+Qwen3-VL 4B - LoRA Fine-tuned
+
+GLM-4.6V-Flash 9B - zero-shot
+
+
+Video level:
+

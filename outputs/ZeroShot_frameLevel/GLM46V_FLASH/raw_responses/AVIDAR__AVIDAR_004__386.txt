@@ -1,0 +1,10 @@
+<think>Got it, let's analyze the image. First, detect human people. There's one person in the center of the image. So we need to find the bounding box for that person. Let's estimate the coordinates. The person is standing, so from the top of the head to the bottom of the legs. Looking at the image, the person is in the middle. So the bounding box would be around [410, 286, 620, 997] maybe. Then, check the interaction-readiness label. The person is standing, looking forward, so likely "interaction_ready" because they seem available. Now, check if there are other people. The image has only one person visible. So the "people" array will have one object. Now, structure the JSON as per the instructions.</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [410, 286, 620, 997],
+      "label": "interaction_ready"
+    }
+  ]
+}<|end_of_box|>

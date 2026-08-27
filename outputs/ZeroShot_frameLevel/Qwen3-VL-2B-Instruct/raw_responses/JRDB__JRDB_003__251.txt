@@ -1,0 +1,116 @@
+```json
+{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [0, 156, 127, 792],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox": [314, 355, 356, 538],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 3,
+      "bbox": [356, 345, 394, 540],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 4,
+      "bbox": [394, 330, 444, 560],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 5,
+      "bbox": [444, 364, 484, 524],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 6,
+      "bbox": [506, 394, 544, 498],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 7,
+      "bbox": [584, 374, 644, 524],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 8,
+      "bbox": [671, 355, 731, 556],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 9,
+      "bbox": [671, 355, 731, 556],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 10,
+      "bbox": [671, 355, 731, 556],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 11,
+      "bbox": [671, 355, 731, 556],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 12,
+      "bbox": [671, 355, 731, 556],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 13,
+      "bbox": [671, 355, 731, 556],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 14,
+      "bbox": [671, 355, 731, 556],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 15,
+      "bbox": [671, 355, 731, 556],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 16,
+      "bbox": [671, 355, 731, 556],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 17,
+      "bbox": [671, 355, 731, 556],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 18,
+      "bbox": [671, 355, 731, 556],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 19,
+      "bbox": [671, 355, 731, 556],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 20,
+      "bbox": [671, 355, 731, 556],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 21,
+      "bbox": [671, 355, 731, 556],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 22,
+      "bbox": [671, 355, 731, 556],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 23,
+      "bbox": [

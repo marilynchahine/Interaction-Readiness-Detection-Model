@@ -1,0 +1,14 @@
+torch
+pandas
+pyarrow
+pillow
+scikit-learn
+datasets
+accelerate
+peft
+bitsandbytes
+trl
+qwen-vl-utils
+transformers>=4.57.0
+matplotlib
+numpy

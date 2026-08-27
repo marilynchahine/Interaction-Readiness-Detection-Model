@@ -1,0 +1,10 @@
+<think>Got it, let's analyze the image. First, detect the human person. There's one woman in the image. Now, find her bounding box. Looking at the image, she's standing in the foreground. So the bounding box would be around her. Then, determine the interaction-readiness label. She's looking forward, not engaged with anyone else, so "not_interaction_ready" because she's not ready to begin an interaction—she's just standing there, not oriented toward someone or showing readiness. So we have one person. Now, structure the JSON as per the instructions.</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [530, 200, 698, 997],
+      "label": "not_interaction_ready"
+    }
+  ]
+}<|end_of_box|>

@@ -1,0 +1,23 @@
+<think>Got it, let's analyze the image. First, detect human people. There are two people visible: one in the foreground (the woman standing at the counter) and one behind the counter (the man). 
+
+First, the woman in the foreground: she's standing, facing the counter, probably interacting with the person behind. So her interaction readiness? She's approaching or waiting, so "interaction_ready". Her bounding box: let's estimate. She's on the left, so x1 around 130, y1 around 0, x2 around 325, y2 around 997.
+
+Then the man behind the counter: he's at the register, looking at the woman. So he's in interaction with her, so "interaction_ongoing". His bbox: x1 around 386, y1 around 162, x2 around 470, y2 around 266.
+
+Now check the labels. The woman is not behind the counter, so she's approaching, so interaction_ready. The man is at the counter, likely serving her, so interaction_ongoing.
+
+Now count: 2 people, which is within 5. So the JSON should have two entries.</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [130, 0, 325, 997],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox": [386, 162, 470, 266],
+      "label": "interaction_ongoing"
+    }
+  ]
+}<|end_of_box|>

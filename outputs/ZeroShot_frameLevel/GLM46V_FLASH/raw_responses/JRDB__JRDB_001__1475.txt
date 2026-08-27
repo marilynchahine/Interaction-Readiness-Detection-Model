@@ -1,0 +1,35 @@
+<think>Got it, let's analyze the image. First, detect human people.
+
+Looking at the image: there's a person on the left side, likely a customer. Then there's a person behind the counter, probably the staff. Are there others? Let's check.
+
+First person: leftmost, standing near the counter, so bounding box around that person. Then the staff behind the counter.
+
+So first person: [0, 118, 97, 872] maybe. Then the staff: [377, 175, 455, 279]? Wait, need to check positions.
+
+Now, interaction labels. The left person is likely waiting or approaching, so interaction_ready. The staff behind the counter—maybe not interaction_ready because they're working. Let's confirm.
+
+So people:
+
+1. Left person: bounding box [0, 118, 97, 872], label interaction_ready.
+
+2. Staff behind counter: [376, 175, 455, 279], label not_interaction_ready (since they're working, not ready for new interaction).
+
+Are there any other people? Maybe the person in the background behind the staff? But not clearly visible. So only two people.
+
+Now, check the count: at most 5, so okay.
+
+Now format the JSON.</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [0, 118, 97, 872],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox": [376, 175, 455, 279],
+      "label": "not_interaction_ready"
+    }
+  ]
+}<|end_of_box|>

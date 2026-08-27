@@ -1,0 +1,10 @@
+<think>Got it, let's analyze the image. First, look for human people. In the image, there's a person on the left side, partially visible, wearing a dark hoodie and jeans. So that's one person. Now, check if they are clearly visible. The person is standing near the counter, facing the counter maybe? Let's see the bounding box. The person is on the left, so x1 is around 0, y1 around 0, x2 around 115, y2 around 942 (since they're standing). Now, what's their interaction readiness? The person is standing, maybe waiting or approaching? Let's check the labels. The person is not actively interacting yet, but is oriented towards the counter, so maybe "interaction_ready"? Wait, the person is on the left, so we need to check if they are ready. The person is standing, looking towards the counter, so likely "interaction_ready". Are there other people? In the background, maybe a staff member behind the counter? But the task says detect clearly visible human people. The staff behind the counter might be partially visible, but the main visible person is the one on the left. So only one person. So the JSON would have one person with bbox and label.</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [0, 42, 118, 944],
+      "label": "interaction_ready"
+    }
+  ]
+}<|end_of_box|>

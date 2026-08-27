@@ -1,0 +1,11 @@
+```json
+{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [612, 242, 852, 998],
+      "label": "interaction_ready"
+    }
+  ]
+}
+```

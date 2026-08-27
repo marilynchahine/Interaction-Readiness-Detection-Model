@@ -1,0 +1,56 @@
+<think>Got it, let's analyze the image. First, detect human people.
+
+Looking at the image:
+
+1. Left side: A person with a headscarf, wearing dark clothing. So that's one person. Let's find the bounding box. The person is on the left, so x1 around 0, y1 around 122, x2 around 82, y2 around 875. Then check interaction readiness. The person is standing, maybe waiting? But need to see orientation. The person is facing the counter, so maybe interaction_ready.
+
+2. Behind the counter: There's a person working, maybe the staff. So second person. Bounding box: around x1 394, y1 167, x2 476, y2 277. This person is behind the counter, so likely not interaction_ready because they're working, not waiting for customer interaction.
+
+3. Right side: A person standing near the display case, wearing dark jacket and jeans. So third person. Bounding box: x1 772, y1 0, x2 992, y2 997. This person is facing the counter, so maybe interaction_ready? Wait, but need to check if they're ready. The person is standing there, maybe waiting to order.
+
+Now, count people. There are three visible people. Let's confirm:
+
+- Left person: partially visible, but clear. So person_id 1.
+
+- Counter person: person_id 2.
+
+- Right person: person_id 3.
+
+Now assign labels:
+
+Left person: facing the counter, so interaction_ready.
+
+Counter person: working, so not_interaction_ready.
+
+Right person: standing, maybe waiting, so interaction_ready.
+
+Now check the labels. Let's verify each:
+
+Person 1 (left): bbox [0, 122, 82, 875], label interaction_ready.
+
+Person 2 (counter): [394, 167, 476, 277], label not_interaction_ready.
+
+Person 3 (right): [772, 0, 992, 997], label interaction_ready.
+
+Are there any other people? The background has maybe someone else, but not clearly visible. So three people.
+
+Now format the JSON as required.</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [0, 122, 82, 875],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox": [394, 167, 476, 277],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 3,
+      "bbox": [772, 0, 992, 997],
+      "label": "interaction_ready"
+    }
+  ]
+}<|end_of_box|>

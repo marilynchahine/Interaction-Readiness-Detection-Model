@@ -1,0 +1,33 @@
+<think>Got it, let's analyze the image. First, detect human people. There are two people visible. 
+
+First person on the left: partially visible, standing near the counter. Second person on the right, more visible, standing by the display case.
+
+Now, for each, assign labels.
+
+Left person: They seem to be at the counter, maybe waiting or ready? Let's see. The left person is near the counter, possibly interaction_ready because they might be waiting to order. But need to check orientation. The left person is facing the counter, so maybe interaction_ready.
+
+Right person: Standing by the display case, maybe looking at items. They are not at the counter, so likely not_interaction_ready.
+
+Now, bounding boxes. Let's estimate coordinates.
+
+Left person: x1 around 0, y1 around 135, x2 around 85, y2 around 870. So bbox [0, 135, 85, 870].
+
+Right person: x1 around 785, y1 around 0, x2 around 998, y2 around 997. So [785, 0, 998, 997].
+
+Now labels. Left person: interaction_ready (since they are at the counter, likely waiting to interact with staff). Right person: not_interaction_ready (they are looking at the display, not engaged with the counter area).
+
+Check the count: 2 people, which is within 5. Now format the JSON.</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [0, 135, 85, 870],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox": [785, 0, 998, 997],
+      "label": "not_interaction_ready"
+    }
+  ]
+}<|end_of_box|>

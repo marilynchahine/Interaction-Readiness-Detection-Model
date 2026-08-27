@@ -1,0 +1,27 @@
+<think>Got it, let's analyze the image. First, detect the human people. There are two people clearly visible: a man on the left and a woman on the right.
+
+For the first person (man): He's standing, facing forward, smiling. So we need to find his bounding box. Looking at the image, his position is roughly from x=247 to x=471, y=99 to y=998 (since he's from top to bottom). So bbox [247, 99, 471, 998].
+
+His label: He's smiling, facing forward, so likely "interaction_ready" because he appears available and willing.
+
+Second person (woman): She's on the right, also facing forward, smiling. Bounding box: x=586 to x=798, y=180 to y=998. So [586, 180, 798, 998].
+
+Her label: She's smiling, facing forward, so "interaction_ready" as well.
+
+Now, check the labels. Both are interaction_ready. Now, format the JSON as required.
+
+Make sure the person_id is sequential, 1 and 2. Bboxes are correct. Labels are correct.</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [247, 99, 471, 998],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox": [586, 180, 798, 998],
+      "label": "interaction_ready"
+    }
+  ]
+}<|end_of_box|>

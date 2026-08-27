@@ -1,0 +1,10 @@
+<think>Got it, let's analyze the image. First, detect human people. There's one person visible: the woman walking in the room. Now, check her interaction readiness. She's walking, not engaged with anyone, so "not_interaction_ready". Then create the JSON with one person.</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [200, 334, 364, 997],
+      "label": "not_interaction_ready"
+    }
+  ]
+}<|end_of_box|>

@@ -1,0 +1,29 @@
+{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [531, 260, 737, 781],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox": [455, 417, 540, 717],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 3,
+      "bbox": [363, 412, 455, 600],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 4,
+      "bbox": [154, 427, 237, 604],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 5,
+      "bbox": [810, 412, 893, 654],
+      "label": "not_interaction_ready"
+    }
+  ]
+}

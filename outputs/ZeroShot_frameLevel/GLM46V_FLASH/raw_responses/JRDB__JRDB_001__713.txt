@@ -1,0 +1,12 @@
+<think>Got it, let's analyze the image. First, detect human people. In the image, there's a person on the left side, walking. So we need to find their bounding box. Let's look at the person: from the top-left, the person is wearing a gray and black shirt, dark pants. So the bounding box would be around that. Now, check the interaction readiness. The person is walking, not oriented towards anyone, so likely "not_interaction_ready". 
+
+Now, check if there are other people. The image doesn't show other people clearly. So only one person. So the JSON should have one object. Let's confirm the labels. The person is walking away, so not ready. So the label is "not_interaction_ready". Bounding box: let's estimate coordinates. The person is from x1=0, y1=0, x2=208 (since they're on the left, walking towards the left maybe? Wait, looking at the image, the person is on the left, so x1 is 0, y1 is 0, x2 is around 200, y2 is 996 (since they're standing on the floor). So the bbox is [0, 0, 208, 996]. Then label is "not_interaction_ready".</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [0, 0, 208, 996],
+      "label": "not_interaction_ready"
+    }
+  ]
+}<|end_of_box|>

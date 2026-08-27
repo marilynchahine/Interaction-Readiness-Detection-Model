@@ -1,0 +1,117 @@
+<think>Got it, let's analyze the image. First, detect human people.
+
+Looking at the image: There's a person on the left side, maybe a customer or staff. Then another person behind the counter? Wait, the image shows:
+
+- Leftmost person: partially visible, maybe a customer. Let's check.
+
+First, identify each person:
+
+1. The person on the far left, near the counter: visible from the head down? Let's see. The first person is on the left, maybe [0, 185, 41, 410] or similar. Then there's a person behind the counter, maybe [170, 200, 214, 272]. Then the person on the right foreground, walking: [605, 0, 998, 997].
+
+Now, check each:
+
+- Person 1 (leftmost): Maybe a customer, but is that clearly visible? The leftmost person is partially visible, maybe [0, 185, 41, 410]. Their posture: maybe not interaction-ready? Or maybe not ready.
+
+- Person 2 (behind counter): [170, 200, 214, 272]. They are behind the counter, maybe working, so not interaction-ready.
+
+- Person 3 (right foreground): [605, 0, 998, 997]. This person is walking, so likely not interaction-ready.
+
+Wait, but we need to check which are clearly visible. Let's count:
+
+The image has three people? Let's see:
+
+- Leftmost: [0, 185, 41, 410] (partially visible, maybe a customer)
+
+- Behind counter: [170, 200, 214, 272] (staff)
+
+- Right foreground: [605, 0, 998, 997] (walking)
+
+Now, for each, assign labels.
+
+First, person 1 (leftmost): They are near the counter, maybe waiting? But is their interaction-ready? Or not.
+
+Wait, the task says "detect clearly visible human people". So we need to find all clearly visible ones, up to 5.
+
+Let's check each:
+
+1. Leftmost person: visible from head, maybe [0, 185, 41, 410]. This is a person, so include.
+
+2. Person behind counter: [170, 200, 214, 272]. Visible.
+
+3. Right foreground person: [605, 0, 998, 997]. Visible.
+
+Are there others? Maybe not.
+
+Now, assign labels:
+
+- Person 1 (leftmost): They are near the counter, maybe not ready? Or maybe waiting? But since they are partially visible, maybe not interaction-ready.
+
+- Person 2 (behind counter): They are working, so not interaction-ready.
+
+- Person 3 (right): walking, so not interaction-ready.
+
+Wait, but let's check the definitions.
+
+"interaction_ready": available, willing, prepared to begin interaction. So if someone is approaching, waiting, etc.
+
+The right person is walking away, so not ready.
+
+The left person: maybe not ready.
+
+The behind counter: not ready.
+
+But maybe the left person is a customer waiting, but not clearly ready.
+
+Alternatively, maybe only two people? Let's see.
+
+Wait, the image: left side has a person (maybe customer) and behind counter has another, and right has a walking person.
+
+So three people.
+
+Now, for each, create bounding boxes.
+
+Let's estimate:
+
+- Leftmost: [0, 185, 41, 410]
+
+- Behind counter: [170, 200, 214, 272]
+
+- Right: [605, 0, 998, 997]
+
+Now, labels:
+
+All three are not interaction-ready, because they are not preparing to interact.
+
+So the JSON would be:
+
+{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [0, 185, 41, 410],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox": [170, 200, 214, 272],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 3,
+      "bbox": [605, 0, 998, 997],
+      "label": "not_interaction_ready"
+    }
+  ]
+}
+
+But wait, is the leftmost person clearly visible? Yes, partially, but the task says "include partially visible when meaningful". So yes.
+
+Alternatively, maybe the leftmost is not clearly visible enough? But the image shows a head on the left.
+
+Another check: the right person is prominent, so include.
+
+So final JSON as above.</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id

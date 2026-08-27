@@ -1,0 +1,76 @@
+<think>Got it, let's analyze the image. First, I need to detect clearly visible human people and their bounding boxes, then assign the interaction-readiness label.
+
+Looking at the image:
+
+1. The person on the left, walking towards the left side. Let's find his bounding box. He's standing, maybe moving left. So bbox around him: [118, 293, 196, 597].
+
+2. The person in the green shirt in the middle background. Bbox: [297, 321, 342, 477].
+
+3. The person in dark clothes near the center, maybe standing. Bbox: [445, 347, 495, 522].
+
+4. The group on the right: first person in dark, then another, then the woman in light top. Let's check each. The first on the right group: [667, 376, 707, 511]. Then next: [712, 371, 745, 511]. Then the woman: [746, 354, 786, 514].
+
+5. The person on the far right, near the stairs: [943, 194, 998, 688].
+
+Now, we need to assign labels. Let's check each:
+
+- Left person: He's walking, maybe not oriented towards anyone else, so "not_interaction_ready".
+- Green shirt person: Standing, maybe not interacting with anyone else, so "not_interaction_ready".
+- Center dark person: Standing, not interacting, so "not_interaction_ready".
+- Right group: The woman in light top is walking towards the right, maybe not interacting. The others in the group: maybe not. The far right person is standing, maybe not. So most prominent ones: left person, green shirt, center, and two on the right. But we need at most 5.
+
+Wait, the task says detect at most 5, so we need to pick the 5 most prominent. Let's list all visible:
+
+1. Left man: [118, 293, 196, 597] - label not_interaction_ready.
+2. Green shirt man: [297, 321, 342, 477] - not_interaction_ready.
+3. Center dark man: [445, 347, 495, 522] - not_interaction_ready.
+4. Right group first: [667, 376, 707, 511] - not_interaction_ready.
+5. Right group woman: [746, 354, 786, 514] - not_interaction_ready.
+6. Far right man: [943, 194, 998, 688] - not_interaction_ready.
+
+But we need to assign labels based on interaction readiness. Let's check each:
+
+- Left man: He's walking, not looking at anyone else, so "not_interaction_ready".
+- Green shirt: Standing, not interacting, so "not_interaction_ready".
+- Center: Standing, not interacting, "not_interaction_ready".
+- Right group: The woman is walking, maybe not interacting. The others in the group are walking away? Wait, the people on the right are walking towards the right, so not oriented towards each other or the left. So all "not_interaction_ready".
+- Far right: Standing, maybe not interacting.
+
+Are any of them "interaction_ready"? Let's see. None of them seem to be oriented towards each other or showing readiness. So all "not_interaction_ready".
+
+Now, we need to return the JSON with these people. Let's confirm the bounding boxes.
+
+Left man: x1=118, y1=293, x2=196, y2=597.
+
+Green shirt: 297,321,342,477.
+
+Center: 445,347,495,522.
+
+Right group first: 667,376,707,511.
+
+Right group woman: 746,354,786,514.
+
+Far right: 943,194,998,688.
+
+Now, assign labels. All "not_interaction_ready".
+
+So the JSON would be:
+
+{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [118, 293, 196, 597],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox": [297, 321, 342, 477],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 3,
+      "bbox": [445, 347, 495, 522],
+      "label": "not_interaction_ready"
+    },
+    {

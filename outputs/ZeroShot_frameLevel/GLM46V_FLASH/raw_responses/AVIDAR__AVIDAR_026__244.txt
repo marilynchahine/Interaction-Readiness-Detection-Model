@@ -1,0 +1,25 @@
+<think>Got it, let's analyze the image. First, detect the human people. There are two people clearly visible: a man on the left and a woman on the right.
+
+For the first person (man): He's standing, facing forward, appears to be available. So label "interaction_ready".
+
+His bounding box: Let's estimate coordinates. He's from around x=252, y=100, to x=468, y=998 (since he's full height). So [252, 100, 468, 998].
+
+Second person (woman): She's smiling, facing forward, also appears ready. So "interaction_ready".
+
+Her bounding box: x=588, y=180, x=798, y=998. So [588, 180, 798, 998].
+
+Now check the labels. Both are interaction_ready. Now format into the JSON as required.</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [252, 100, 468, 998],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox": [588, 180, 798, 998],
+      "label": "interaction_ready"
+    }
+  ]
+}<|end_of_box|>

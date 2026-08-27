@@ -1,0 +1,24 @@
+<think>Got it, let's analyze the image. First, detect human people. Looking at the image, there's a person on the left side, partially visible, wearing dark clothing and jeans. Then there's another person behind the counter, maybe a staff member. Let's check each.
+
+First person: The leftmost person, likely a customer. Their bounding box would be from the left edge to around x100, y0 to y998 maybe. So [0, 0, 118, 996] perhaps. Then the second person is behind the counter, near the screen. Let's find their position. The person behind the counter is visible, maybe [160, 200, 214, 275] or similar.
+
+Now, for each, assign labels. The left person is standing, maybe waiting, so interaction_ready? The person behind the counter is probably working, not ready for interaction. So:
+
+Person 1: [0, 0, 118, 996], label "interaction_ready" (since they're likely a customer waiting).
+Person 2: [160, 200, 214, 275], label "not_interaction_ready" (staff behind counter, busy).
+
+Are there any others? The image doesn't show more people. So total 2 people. Now format as JSON.</think>
+<|begin_of_box|>{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [0, 0, 118, 996],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox": [160, 200, 214, 275],
+      "label": "not_interaction_ready"
+    }
+  ]
+}<|end_of_box|>
