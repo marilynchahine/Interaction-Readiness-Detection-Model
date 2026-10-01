@@ -1,0 +1,64 @@
+{
+  "source_dataset": "SSUP-HRI",
+  "video_id": "Oct-6-astor-place-22",
+  "frame_id": 656,
+  "ground_truth_people": [
+    {
+      "person_id": 1,
+      "bbox_xyxy": [
+        731.51,
+        225.36,
+        1549.62,
+        890.32
+      ],
+      "label_original": "interaction_ongoing",
+      "label_3class": "interaction_ongoing"
+    }
+  ],
+  "predicted_people": [
+    {
+      "person_id": 1,
+      "bbox_2d": [
+        731.52,
+        225.72,
+        1568.64,
+        893.16
+      ],
+      "label": "interaction_ongoing",
+      "bbox_normalized_1000": [
+        381.0,
+        209.0,
+        817.0,
+        827.0
+      ]
+    }
+  ],
+  "image_error": null,
+  "parse_error": null,
+  "frame_group": 507,
+  "split": "Test",
+  "source_json": "SSUP-HRI__Oct-6-astor-place-22__group_000507.json",
+  "model": "Qwen/Qwen3-VL-2B-Instruct",
+  "zero_shot": true,
+  "context_frame_numbers": [
+    641,
+    642,
+    643,
+    644,
+    645,
+    646,
+    647,
+    648,
+    649,
+    650,
+    651,
+    652,
+    653,
+    654,
+    655
+  ],
+  "target_frame_number": 656,
+  "target_image_width": 1920,
+  "target_image_height": 1080,
+  "raw_model_response": "{\n  \"people\": [\n    {\n      \"person_ID\": 1,\n      \"bbox\": [381, 209, 817, 827],\n      \"label\": \"interaction_ongoing\"\n    }\n  ]\n}"
+}

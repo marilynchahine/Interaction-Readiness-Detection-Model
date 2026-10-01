@@ -1,0 +1,47 @@
+{
+  "source_dataset": "SSUP-HRI",
+  "video_id": "Sep-21-astor-place-15",
+  "frame_id": 282,
+  "ground_truth_people": [
+    {
+      "person_id": 1,
+      "bbox_xyxy": [
+        915.17,
+        424.95,
+        1025.26,
+        629.18
+      ],
+      "label_original": "interaction_ready",
+      "label_3class": "interaction_ready"
+    }
+  ],
+  "predicted_people": [],
+  "image_error": null,
+  "parse_error": null,
+  "frame_group": 28,
+  "split": "Test",
+  "source_json": "SSUP-HRI__Sep-21-astor-place-15__group_000028.json",
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "zero_shot": true,
+  "context_frame_numbers": [
+    267,
+    268,
+    269,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275,
+    276,
+    277,
+    278,
+    279,
+    280,
+    281
+  ],
+  "target_frame_number": 282,
+  "target_image_width": 1920,
+  "target_image_height": 1080,
+  "raw_model_response": "{\"people\":[]}"
+}

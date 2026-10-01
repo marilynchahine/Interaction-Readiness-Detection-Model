@@ -1,0 +1,116 @@
+```json
+{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [620, 141, 770, 746],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox": [288, 300, 350, 567],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 3,
+      "bbox": [173, 329, 208, 468],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 4,
+      "bbox": [225, 331, 255, 470],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 5,
+      "bbox": [788, 325, 830, 577],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 6,
+      "bbox": [825, 325, 870, 577],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 7,
+      "bbox": [740, 331, 770, 525],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 8,
+      "bbox": [798, 325, 830, 577],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 9,
+      "bbox": [600, 349, 630, 508],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 10,
+      "bbox": [540, 408, 560, 454],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 11,
+      "bbox": [560, 408, 580, 454],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 12,
+      "bbox": [580, 408, 600, 454],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 13,
+      "bbox": [598, 408, 618, 454],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 14,
+      "bbox": [618, 408, 638, 454],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 15,
+      "bbox": [638, 408, 658, 454],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 16,
+      "bbox": [658, 408, 678, 454],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 17,
+      "bbox": [678, 408, 698, 454],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 18,
+      "bbox": [698, 408, 718, 454],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 19,
+      "bbox": [718, 408, 738, 454],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 20,
+      "bbox": [738, 408, 758, 454],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 21,
+      "bbox": [758, 408, 778, 454],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 22,
+      "bbox": [778, 408, 798, 454],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 23,
+      "bbox": [798, 408, 818, 454

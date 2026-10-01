@@ -1,0 +1,122 @@
+{
+  "source_dataset": "SSUP-HRI",
+  "video_id": "Oct-12-astor-place-19",
+  "frame_id": 664,
+  "ground_truth_people": [
+    {
+      "person_id": 1,
+      "bbox_xyxy": [
+        892.12,
+        385.31,
+        1024.09,
+        702.47
+      ],
+      "label_original": "not_interaction_ready",
+      "label_3class": "not_interaction_ready"
+    }
+  ],
+  "predicted_people": [],
+  "image_error": null,
+  "parse_error": null,
+  "split": "Test",
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "zero_shot": true,
+  "temporal_method": "prediction_conditioned_rollout",
+  "target_frame_number": 664,
+  "target_image_width": 1920,
+  "target_image_height": 1080,
+  "rollout_previous_frame_numbers": [
+    660,
+    661,
+    662,
+    663
+  ],
+  "rollout_history_length": 4,
+  "rollout_padding_count": 11,
+  "rollout_context": [
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 660,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 661,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 662,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 663,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 664,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 664,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 664,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 664,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 664,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 664,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 664,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 664,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 664,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 664,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 664,
+      "prediction": null
+    }
+  ],
+  "raw_model_response": "{\"people\":[]}"
+}

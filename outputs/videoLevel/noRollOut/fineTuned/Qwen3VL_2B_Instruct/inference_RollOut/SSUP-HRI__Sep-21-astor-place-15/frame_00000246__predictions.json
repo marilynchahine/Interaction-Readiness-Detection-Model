@@ -1,0 +1,178 @@
+{
+  "source_dataset": "SSUP-HRI",
+  "video_id": "Sep-21-astor-place-15",
+  "frame_id": 246,
+  "ground_truth_people": [
+    {
+      "person_id": 1,
+      "bbox_xyxy": [
+        936.03,
+        475.78,
+        1008.13,
+        594.9
+      ],
+      "label_original": "not_interaction_ready",
+      "label_3class": "not_interaction_ready"
+    }
+  ],
+  "predicted_people": [
+    {
+      "person_id": 1,
+      "bbox_2d": [
+        691.2,
+        440.64,
+        819.84,
+        623.16
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        360.0,
+        408.0,
+        427.0,
+        577.0
+      ]
+    }
+  ],
+  "image_error": null,
+  "parse_error": null,
+  "split": "Test",
+  "model": "Qwen/Qwen3-VL-2B-Instruct",
+  "zero_shot": true,
+  "temporal_method": "prediction_conditioned_rollout",
+  "target_frame_number": 246,
+  "target_image_width": 1920,
+  "target_image_height": 1080,
+  "rollout_previous_frame_numbers": [
+    240,
+    241,
+    242,
+    243,
+    244,
+    245
+  ],
+  "rollout_history_length": 6,
+  "rollout_padding_count": 9,
+  "rollout_context": [
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 240,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 241,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 242,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 243,
+      "prediction": {
+        "people": [
+          {
+            "person_ID": 1,
+            "bbox": [
+              384.0,
+              408.0,
+              427.0,
+              577.0
+            ],
+            "label": "interaction_ready"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 244,
+      "prediction": {
+        "people": [
+          {
+            "person_ID": 1,
+            "bbox": [
+              377.0,
+              408.0,
+              427.0,
+              577.0
+            ],
+            "label": "interaction_ready"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 245,
+      "prediction": {
+        "people": [
+          {
+            "person_ID": 1,
+            "bbox": [
+              377.0,
+              408.0,
+              427.0,
+              577.0
+            ],
+            "label": "interaction_ready"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 246,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 246,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 246,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 246,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 246,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 246,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 246,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 246,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 246,
+      "prediction": null
+    }
+  ],
+  "raw_model_response": "{\"people\":[{\"person_ID\":1,\"bbox\":[360,408,427,577],\"label\":\"interaction_ready\"}]}"
+}

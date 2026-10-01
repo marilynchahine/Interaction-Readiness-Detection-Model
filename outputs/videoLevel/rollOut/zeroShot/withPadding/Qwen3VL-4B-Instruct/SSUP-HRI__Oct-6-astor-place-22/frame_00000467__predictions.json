@@ -1,0 +1,204 @@
+{
+  "source_dataset": "SSUP-HRI",
+  "video_id": "Oct-6-astor-place-22",
+  "frame_id": 467,
+  "ground_truth_people": [
+    {
+      "person_id": 1,
+      "bbox_xyxy": [
+        893.21,
+        430.37,
+        1038.45,
+        667.94
+      ],
+      "label_original": "interaction_ready",
+      "label_3class": "interaction_ready"
+    }
+  ],
+  "predicted_people": [
+    {
+      "person_id": 1,
+      "bbox_2d": [
+        998.4,
+        291.6,
+        1382.4,
+        842.4
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        520.0,
+        270.0,
+        720.0,
+        780.0
+      ]
+    },
+    {
+      "person_id": 2,
+      "bbox_2d": [
+        864.0,
+        410.4,
+        1056.0,
+        777.6
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        450.0,
+        380.0,
+        550.0,
+        720.0
+      ]
+    },
+    {
+      "person_id": 3,
+      "bbox_2d": [
+        537.6,
+        410.4,
+        729.6,
+        777.6
+      ],
+      "label": "not_interaction_ready",
+      "bbox_normalized_1000": [
+        280.0,
+        380.0,
+        380.0,
+        720.0
+      ]
+    }
+  ],
+  "image_error": null,
+  "parse_error": null,
+  "split": "Test",
+  "model": "Qwen/Qwen3-VL-4B-Instruct",
+  "zero_shot": true,
+  "temporal_method": "prediction_conditioned_rollout",
+  "target_frame_number": 467,
+  "target_image_width": 1920,
+  "target_image_height": 1080,
+  "rollout_previous_frame_numbers": [
+    452,
+    453,
+    454,
+    455,
+    456,
+    457,
+    458,
+    459,
+    460,
+    461,
+    462,
+    463,
+    464,
+    465,
+    466
+  ],
+  "rollout_history_length": 15,
+  "rollout_padding_count": 0,
+  "rollout_context": [
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 452,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 453,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 454,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 455,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 456,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 457,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 458,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 459,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 460,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 461,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 462,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 463,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 464,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 465,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 466,
+      "prediction": {
+        "people": []
+      }
+    }
+  ],
+  "raw_model_response": "{\"people\":[\n    {\n        \"person_ID\": 1,\n        \"bbox\": [\n            520,\n            270,\n            720,\n            780\n        ],\n        \"label\": \"interaction_ready\"\n    },\n    {\n        \"person_ID\": 2,\n        \"bbox\": [\n            450,\n            380,\n            550,\n            720\n        ],\n        \"label\": \"interaction_ready\"\n    },\n    {\n        \"person_ID\": 3,\n        \"bbox\": [\n            280,\n            380,\n            380,\n            720\n        ],\n        \"label\": \"not_interaction_ready\"\n    }\n]}"
+}

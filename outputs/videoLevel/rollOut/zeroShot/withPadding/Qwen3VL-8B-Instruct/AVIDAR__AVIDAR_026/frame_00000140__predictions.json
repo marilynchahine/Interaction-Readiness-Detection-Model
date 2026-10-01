@@ -1,0 +1,166 @@
+{
+  "source_dataset": "AVIDAR",
+  "video_id": "AVIDAR_026",
+  "frame_id": 140,
+  "ground_truth_people": [
+    {
+      "person_id": 1,
+      "bbox_xyxy": [
+        178.99,
+        41.7,
+        334.64,
+        446.2
+      ],
+      "label_original": "interaction_ready",
+      "label_3class": "interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox_xyxy": [
+        425.72,
+        82.49,
+        577.82,
+        446.02
+      ],
+      "label_original": "interaction_ready",
+      "label_3class": "interaction_ready"
+    }
+  ],
+  "predicted_people": [],
+  "image_error": null,
+  "parse_error": null,
+  "split": "Test",
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "zero_shot": true,
+  "temporal_method": "prediction_conditioned_rollout",
+  "target_frame_number": 140,
+  "target_image_width": 720,
+  "target_image_height": 450,
+  "rollout_previous_frame_numbers": [
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139
+  ],
+  "rollout_history_length": 15,
+  "rollout_padding_count": 0,
+  "rollout_context": [
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 125,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 126,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 127,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 128,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 129,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 130,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 131,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 132,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 133,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 134,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 135,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 136,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 137,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 138,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 139,
+      "prediction": {
+        "people": []
+      }
+    }
+  ],
+  "raw_model_response": "{\"people\":[]}"
+}

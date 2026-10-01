@@ -1,0 +1,134 @@
+{
+  "source_dataset": "AVIDAR",
+  "video_id": "AVIDAR_004",
+  "frame_id": 108,
+  "ground_truth_people": [
+    {
+      "person_id": 1,
+      "bbox_xyxy": [
+        129.35,
+        132.93,
+        226.86,
+        445.77
+      ],
+      "label_original": "not_interaction_ready",
+      "label_3class": "not_interaction_ready"
+    }
+  ],
+  "predicted_people": [],
+  "image_error": null,
+  "parse_error": null,
+  "split": "Test",
+  "model": "Qwen/Qwen3-VL-4B-Instruct",
+  "zero_shot": true,
+  "temporal_method": "prediction_conditioned_rollout",
+  "target_frame_number": 108,
+  "target_image_width": 720,
+  "target_image_height": 450,
+  "rollout_previous_frame_numbers": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+  ],
+  "rollout_history_length": 8,
+  "rollout_padding_count": 7,
+  "rollout_context": [
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 100,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 101,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 102,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 103,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 104,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 105,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 106,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 107,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 108,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 108,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 108,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 108,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 108,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 108,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 108,
+      "prediction": null
+    }
+  ],
+  "raw_model_response": "{\"people\":[]}"
+}

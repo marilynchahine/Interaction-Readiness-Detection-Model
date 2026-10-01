@@ -1,0 +1,47 @@
+{
+  "source_dataset": "JRDB",
+  "video_id": "JRDB_001",
+  "frame_id": 1619,
+  "ground_truth_people": [
+    {
+      "person_id": 3,
+      "bbox_xyxy": [
+        578.42,
+        0.0,
+        682.51,
+        470.0
+      ],
+      "label_original": "not_interaction_ready",
+      "label_3class": "not_interaction_ready"
+    }
+  ],
+  "predicted_people": [],
+  "image_error": null,
+  "parse_error": null,
+  "frame_group": 3,
+  "split": "Test",
+  "source_json": "JRDB__JRDB_001__group_000003.json",
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "zero_shot": true,
+  "context_frame_numbers": [
+    1604,
+    1605,
+    1606,
+    1607,
+    1608,
+    1609,
+    1610,
+    1611,
+    1612,
+    1613,
+    1614,
+    1615,
+    1616,
+    1617,
+    1618
+  ],
+  "target_frame_number": 1619,
+  "target_image_width": 752,
+  "target_image_height": 480,
+  "raw_model_response": "{\"people\":[]}"
+}

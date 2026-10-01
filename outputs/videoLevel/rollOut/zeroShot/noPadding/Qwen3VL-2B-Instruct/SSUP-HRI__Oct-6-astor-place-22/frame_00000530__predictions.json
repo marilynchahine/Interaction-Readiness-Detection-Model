@@ -1,0 +1,321 @@
+{
+  "source_dataset": "SSUP-HRI",
+  "video_id": "Oct-6-astor-place-22",
+  "frame_id": 530,
+  "ground_truth_people": [
+    {
+      "person_id": 1,
+      "bbox_xyxy": [
+        821.44,
+        384.66,
+        1083.8,
+        874.17
+      ],
+      "label_original": "interaction_ongoing",
+      "label_3class": "interaction_ongoing"
+    }
+  ],
+  "predicted_people": [
+    {
+      "person_id": 1,
+      "bbox_2d": [
+        729.6,
+        367.2,
+        1190.4,
+        842.4
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        380.0,
+        340.0,
+        620.0,
+        780.0
+      ]
+    }
+  ],
+  "image_error": null,
+  "parse_error": null,
+  "split": "Test",
+  "model": "Qwen/Qwen3-VL-2B-Instruct",
+  "zero_shot": true,
+  "temporal_method": "prediction_conditioned_rollout",
+  "target_frame_number": 530,
+  "target_image_width": 1920,
+  "target_image_height": 1080,
+  "rollout_previous_frame_numbers": [],
+  "rollout_history_length": 0,
+  "rollout_padding_count": 0,
+  "rollout_context": [
+    {
+      "kind": "previous_frame_with_prediction",
+      "dataset_frame_number": 515,
+      "prediction": {
+        "people": [
+          {
+            "person_ID": 1,
+            "bbox": [
+              380.0,
+              340.0,
+              620.0,
+              780.0
+            ],
+            "label": "interaction_ready"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "previous_frame_with_prediction",
+      "dataset_frame_number": 516,
+      "prediction": {
+        "people": [
+          {
+            "person_ID": 1,
+            "bbox": [
+              380.0,
+              340.0,
+              620.0,
+              780.0
+            ],
+            "label": "interaction_ready"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "previous_frame_with_prediction",
+      "dataset_frame_number": 517,
+      "prediction": {
+        "people": [
+          {
+            "person_ID": 1,
+            "bbox": [
+              380.0,
+              340.0,
+              620.0,
+              780.0
+            ],
+            "label": "interaction_ready"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "previous_frame_with_prediction",
+      "dataset_frame_number": 518,
+      "prediction": {
+        "people": [
+          {
+            "person_ID": 1,
+            "bbox": [
+              380.0,
+              340.0,
+              620.0,
+              780.0
+            ],
+            "label": "interaction_ready"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "previous_frame_with_prediction",
+      "dataset_frame_number": 519,
+      "prediction": {
+        "people": [
+          {
+            "person_ID": 1,
+            "bbox": [
+              380.0,
+              340.0,
+              620.0,
+              780.0
+            ],
+            "label": "interaction_ready"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "previous_frame_with_prediction",
+      "dataset_frame_number": 520,
+      "prediction": {
+        "people": [
+          {
+            "person_ID": 1,
+            "bbox": [
+              380.0,
+              340.0,
+              620.0,
+              780.0
+            ],
+            "label": "interaction_ready"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "previous_frame_with_prediction",
+      "dataset_frame_number": 521,
+      "prediction": {
+        "people": [
+          {
+            "person_ID": 1,
+            "bbox": [
+              380.0,
+              340.0,
+              620.0,
+              780.0
+            ],
+            "label": "interaction_ready"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "previous_frame_with_prediction",
+      "dataset_frame_number": 522,
+      "prediction": {
+        "people": [
+          {
+            "person_ID": 1,
+            "bbox": [
+              380.0,
+              340.0,
+              620.0,
+              780.0
+            ],
+            "label": "interaction_ready"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "previous_frame_with_prediction",
+      "dataset_frame_number": 523,
+      "prediction": {
+        "people": [
+          {
+            "person_ID": 1,
+            "bbox": [
+              380.0,
+              340.0,
+              620.0,
+              780.0
+            ],
+            "label": "interaction_ready"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "previous_frame_with_prediction",
+      "dataset_frame_number": 524,
+      "prediction": {
+        "people": [
+          {
+            "person_ID": 1,
+            "bbox": [
+              380.0,
+              340.0,
+              620.0,
+              780.0
+            ],
+            "label": "interaction_ready"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "previous_frame_with_prediction",
+      "dataset_frame_number": 525,
+      "prediction": {
+        "people": [
+          {
+            "person_ID": 1,
+            "bbox": [
+              380.0,
+              340.0,
+              620.0,
+              780.0
+            ],
+            "label": "interaction_ready"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "previous_frame_with_prediction",
+      "dataset_frame_number": 526,
+      "prediction": {
+        "people": [
+          {
+            "person_ID": 1,
+            "bbox": [
+              380.0,
+              340.0,
+              620.0,
+              780.0
+            ],
+            "label": "interaction_ready"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "previous_frame_with_prediction",
+      "dataset_frame_number": 527,
+      "prediction": {
+        "people": [
+          {
+            "person_ID": 1,
+            "bbox": [
+              380.0,
+              340.0,
+              620.0,
+              780.0
+            ],
+            "label": "interaction_ready"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "previous_frame_with_prediction",
+      "dataset_frame_number": 528,
+      "prediction": {
+        "people": [
+          {
+            "person_ID": 1,
+            "bbox": [
+              380.0,
+              340.0,
+              620.0,
+              780.0
+            ],
+            "label": "interaction_ready"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "previous_frame_with_prediction",
+      "dataset_frame_number": 529,
+      "prediction": {
+        "people": [
+          {
+            "person_ID": 1,
+            "bbox": [
+              380.0,
+              340.0,
+              620.0,
+              780.0
+            ],
+            "label": "interaction_ready"
+          }
+        ]
+      }
+    }
+  ],
+  "raw_model_response": "```json\n{\n  \"people\": [\n    {\n      \"person_ID\": 1,\n      \"bbox\": [380.0, 340.0, 620.0, 780.0],\n      \"label\": \"interaction_ready\"\n    }\n  ]\n}\n```"
+}

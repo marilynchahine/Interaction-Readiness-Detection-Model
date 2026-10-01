@@ -1,0 +1,131 @@
+{
+  "source_dataset": "SSUP-HRI",
+  "video_id": "Oct-6-astor-place-22",
+  "frame_id": 911,
+  "ground_truth_people": [
+    {
+      "person_id": 1,
+      "bbox_xyxy": [
+        828.52,
+        216.5,
+        1182.77,
+        935.91
+      ],
+      "label_original": "not_interaction_ready",
+      "label_3class": "not_interaction_ready"
+    }
+  ],
+  "predicted_people": [
+    {
+      "person_id": 1,
+      "bbox_2d": [
+        768.0,
+        197.64,
+        1152.0,
+        891.0
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        400.0,
+        183.0,
+        600.0,
+        825.0
+      ]
+    },
+    {
+      "person_id": 2,
+      "bbox_2d": [
+        1152.0,
+        108.0,
+        1920.0,
+        845.64
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        600.0,
+        100.0,
+        1000.0,
+        783.0
+      ]
+    },
+    {
+      "person_id": 3,
+      "bbox_2d": [
+        537.6,
+        297.0,
+        768.0,
+        540.0
+      ],
+      "label": "not_interaction_ready",
+      "bbox_normalized_1000": [
+        280.0,
+        275.0,
+        400.0,
+        500.0
+      ]
+    }
+  ],
+  "image_error": null,
+  "parse_error": null,
+  "frame_group": 693,
+  "split": "Test",
+  "source_json": "SSUP-HRI__Oct-6-astor-place-22__group_000693.json",
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "zero_shot": true,
+  "context_frame_numbers": [
+    896,
+    897,
+    898,
+    899,
+    900,
+    901,
+    902,
+    903,
+    904,
+    905,
+    906,
+    907,
+    908,
+    909,
+    910
+  ],
+  "target_frame_number": 911,
+  "target_image_width": 1920,
+  "target_image_height": 1080,
+  "raw_model_response": "```json\n{\n  \"people\": [\n    {\n      \"person_ID\": 1,\n      \"bbox\": [400, 183, 600, 825],\n      \"label\": \"interaction_ready\"\n    },\n    {\n      \"person_ID\": 2,\n      \"bbox\": [600, 100, 1000, 783],\n      \"label\": \"interaction_ready\"\n    },\n    {\n      \"person_ID\": 3,\n      \"bbox\": [280, 275, 400, 500],\n      \"label\": \"not_interaction_ready\"\n    }\n  ]\n}\n```",
+  "parsed_model_response": {
+    "people": [
+      {
+        "person_ID": 1,
+        "bbox": [
+          400,
+          183,
+          600,
+          825
+        ],
+        "label": "interaction_ready"
+      },
+      {
+        "person_ID": 2,
+        "bbox": [
+          600,
+          100,
+          1000,
+          783
+        ],
+        "label": "interaction_ready"
+      },
+      {
+        "person_ID": 3,
+        "bbox": [
+          280,
+          275,
+          400,
+          500
+        ],
+        "label": "not_interaction_ready"
+      }
+    ]
+  },
+  "person_parse_errors": []
+}

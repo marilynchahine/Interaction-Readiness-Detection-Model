@@ -1,0 +1,105 @@
+{
+  "source_dataset": "SSUP-HRI",
+  "video_id": "Oct-6-astor-place-22",
+  "frame_id": 887,
+  "ground_truth_people": [
+    {
+      "person_id": 1,
+      "bbox_xyxy": [
+        837.58,
+        257.67,
+        1156.04,
+        914.83
+      ],
+      "label_original": "not_interaction_ready",
+      "label_3class": "not_interaction_ready"
+    }
+  ],
+  "predicted_people": [
+    {
+      "person_id": 1,
+      "bbox_2d": [
+        681.6,
+        263.52,
+        1109.76,
+        837.0
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        355.0,
+        244.0,
+        578.0,
+        775.0
+      ]
+    },
+    {
+      "person_id": 2,
+      "bbox_2d": [
+        1109.76,
+        167.4,
+        1685.76,
+        837.0
+      ],
+      "label": "not_interaction_ready",
+      "bbox_normalized_1000": [
+        578.0,
+        155.0,
+        878.0,
+        775.0
+      ]
+    }
+  ],
+  "image_error": null,
+  "parse_error": null,
+  "frame_group": 669,
+  "split": "Test",
+  "source_json": "SSUP-HRI__Oct-6-astor-place-22__group_000669.json",
+  "model": "Qwen/Qwen3-VL-2B-Instruct",
+  "zero_shot": true,
+  "context_frame_numbers": [
+    872,
+    873,
+    874,
+    875,
+    876,
+    877,
+    878,
+    879,
+    880,
+    881,
+    882,
+    883,
+    884,
+    885,
+    886
+  ],
+  "target_frame_number": 887,
+  "target_image_width": 1920,
+  "target_image_height": 1080,
+  "raw_model_response": "{\n  \"people\": [\n    {\n      \"person_ID\": 1,\n      \"bbox\": [355, 244, 578, 775],\n      \"label\": \"interaction_ready\"\n    },\n    {\n      \"person_ID\": 2,\n      \"bbox\": [578, 155, 878, 775],\n      \"label\": \"not_interaction_ready\"\n    }\n  ]\n}",
+  "parsed_model_response": {
+    "people": [
+      {
+        "person_ID": 1,
+        "bbox": [
+          355,
+          244,
+          578,
+          775
+        ],
+        "label": "interaction_ready"
+      },
+      {
+        "person_ID": 2,
+        "bbox": [
+          578,
+          155,
+          878,
+          775
+        ],
+        "label": "not_interaction_ready"
+      }
+    ]
+  },
+  "person_parse_errors": []
+}

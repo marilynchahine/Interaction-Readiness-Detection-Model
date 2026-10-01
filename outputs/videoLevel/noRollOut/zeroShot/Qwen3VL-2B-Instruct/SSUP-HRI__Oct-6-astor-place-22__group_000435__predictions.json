@@ -1,0 +1,105 @@
+{
+  "source_dataset": "SSUP-HRI",
+  "video_id": "Oct-6-astor-place-22",
+  "frame_id": 584,
+  "ground_truth_people": [
+    {
+      "person_id": 1,
+      "bbox_xyxy": [
+        790.17,
+        310.88,
+        1208.66,
+        958.65
+      ],
+      "label_original": "interaction_ongoing",
+      "label_3class": "interaction_ongoing"
+    }
+  ],
+  "predicted_people": [
+    {
+      "person_id": 1,
+      "bbox_2d": [
+        652.8,
+        405.0,
+        1140.48,
+        959.04
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        340.0,
+        375.0,
+        594.0,
+        888.0
+      ]
+    },
+    {
+      "person_id": 2,
+      "bbox_2d": [
+        1152.0,
+        263.52,
+        1704.96,
+        905.04
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        600.0,
+        244.0,
+        888.0,
+        838.0
+      ]
+    }
+  ],
+  "image_error": null,
+  "parse_error": null,
+  "frame_group": 435,
+  "split": "Test",
+  "source_json": "SSUP-HRI__Oct-6-astor-place-22__group_000435.json",
+  "model": "Qwen/Qwen3-VL-2B-Instruct",
+  "zero_shot": true,
+  "context_frame_numbers": [
+    569,
+    570,
+    571,
+    572,
+    573,
+    574,
+    575,
+    576,
+    577,
+    578,
+    579,
+    580,
+    581,
+    582,
+    583
+  ],
+  "target_frame_number": 584,
+  "target_image_width": 1920,
+  "target_image_height": 1080,
+  "raw_model_response": "{\n  \"people\": [\n    {\n      \"person_ID\": 1,\n      \"bbox\": [340, 375, 594, 888],\n      \"label\": \"interaction_ready\"\n    },\n    {\n      \"person_ID\": 2,\n      \"bbox\": [600, 244, 888, 838],\n      \"label\": \"interaction_ready\"\n    }\n  ]\n}",
+  "parsed_model_response": {
+    "people": [
+      {
+        "person_ID": 1,
+        "bbox": [
+          340,
+          375,
+          594,
+          888
+        ],
+        "label": "interaction_ready"
+      },
+      {
+        "person_ID": 2,
+        "bbox": [
+          600,
+          244,
+          888,
+          838
+        ],
+        "label": "interaction_ready"
+      }
+    ]
+  },
+  "person_parse_errors": []
+}

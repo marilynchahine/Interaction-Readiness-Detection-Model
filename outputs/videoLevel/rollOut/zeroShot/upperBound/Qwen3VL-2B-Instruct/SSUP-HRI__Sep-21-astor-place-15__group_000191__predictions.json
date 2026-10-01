@@ -1,0 +1,96 @@
+{
+  "source_dataset": "SSUP-HRI",
+  "video_id": "Sep-21-astor-place-15",
+  "frame_id": 445,
+  "ground_truth_people": [
+    {
+      "person_id": 1,
+      "bbox_xyxy": [
+        915.86,
+        404.59,
+        1081.55,
+        664.38
+      ],
+      "label_original": "interaction_ready",
+      "label_3class": "interaction_ready"
+    }
+  ],
+  "predicted_people": [
+    {
+      "person_id": 1,
+      "bbox_2d": [
+        192.0,
+        297.0,
+        576.0,
+        540.0
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        100.0,
+        275.0,
+        300.0,
+        500.0
+      ]
+    },
+    {
+      "person_id": 2,
+      "bbox_2d": [
+        576.0,
+        297.0,
+        960.0,
+        540.0
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        300.0,
+        275.0,
+        500.0,
+        500.0
+      ]
+    },
+    {
+      "person_id": 3,
+      "bbox_2d": [
+        958.08,
+        297.0,
+        1344.0,
+        540.0
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        499.0,
+        275.0,
+        700.0,
+        500.0
+      ]
+    }
+  ],
+  "image_error": null,
+  "parse_error": null,
+  "frame_group": 191,
+  "split": "Test",
+  "source_json": "SSUP-HRI__Sep-21-astor-place-15__group_000191.json",
+  "model": "Qwen/Qwen3-VL-2B-Instruct",
+  "zero_shot": true,
+  "context_frame_numbers": [
+    430,
+    431,
+    432,
+    433,
+    434,
+    435,
+    436,
+    437,
+    438,
+    439,
+    440,
+    441,
+    442,
+    443,
+    444
+  ],
+  "target_frame_number": 445,
+  "target_image_width": 1920,
+  "target_image_height": 1080,
+  "raw_model_response": "{\n  \"people\": [\n    {\n      \"person_ID\": 1,\n      \"bbox\": [100, 275, 300, 500],\n      \"label\": \"interaction_ready\"\n    },\n    {\n      \"person_ID\": 2,\n      \"bbox\": [300, 275, 500, 500],\n      \"label\": \"interaction_ready\"\n    },\n    {\n      \"person_ID\": 3,\n      \"bbox\": [499, 275, 700, 500],\n      \"label\": \"interaction_ready\"\n    }\n  ]\n}"
+}

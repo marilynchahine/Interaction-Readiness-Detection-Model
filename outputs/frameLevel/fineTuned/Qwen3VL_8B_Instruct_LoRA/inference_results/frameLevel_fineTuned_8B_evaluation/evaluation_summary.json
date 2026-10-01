@@ -1,0 +1,69 @@
+{
+  "detection": {
+    "iou_threshold": 0.5,
+    "num_frames": 2386,
+    "num_ground_truth_boxes": 3041,
+    "num_predicted_boxes": 3086,
+    "true_positives": 2473,
+    "false_positives": 613,
+    "false_negatives": 568,
+    "mean_iou_true_positive_matches": 0.8662618552493421,
+    "median_iou_true_positive_matches": 0.9109644067204583,
+    "detection_precision": 0.8013609850939728,
+    "detection_recall": 0.8132193357448207,
+    "detection_f1": 0.8072466133507427,
+    "frames_with_image_error": 0,
+    "frames_with_parse_error": 0
+  },
+  "classification": {
+    "num_matched_detections_used_for_classification": 2473,
+    "accuracy": 0.4832187626364739,
+    "macro_f1": 0.4377983647071817,
+    "weighted_f1": 0.4805672495724988,
+    "per_class": [
+      {
+        "class": "not_interaction_ready",
+        "precision": 0.46634615384615385,
+        "recall": 0.4454649827784156,
+        "f1_score": 0.4556664709336465,
+        "support": 871
+      },
+      {
+        "class": "interaction_ready",
+        "precision": 0.5138987883107626,
+        "recall": 0.5487062404870624,
+        "f1_score": 0.5307324254692676,
+        "support": 1314
+      },
+      {
+        "class": "interaction_ongoing",
+        "precision": 0.36134453781512604,
+        "recall": 0.2986111111111111,
+        "f1_score": 0.3269961977186312,
+        "support": 288
+      }
+    ],
+    "confusion_matrix_labels": [
+      "not_interaction_ready",
+      "interaction_ready",
+      "interaction_ongoing"
+    ],
+    "confusion_matrix": [
+      [
+        388,
+        480,
+        3
+      ],
+      [
+        444,
+        721,
+        149
+      ],
+      [
+        0,
+        202,
+        86
+      ]
+    ]
+  }
+}

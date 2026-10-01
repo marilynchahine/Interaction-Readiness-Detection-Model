@@ -1,0 +1,79 @@
+{
+  "source_dataset": "AVIDAR",
+  "video_id": "AVIDAR_004",
+  "frame_id": 144,
+  "ground_truth_people": [
+    {
+      "person_id": 1,
+      "bbox_xyxy": [
+        199.54,
+        128.75,
+        358.93,
+        446.76
+      ],
+      "label_original": "not_interaction_ready",
+      "label_3class": "not_interaction_ready"
+    }
+  ],
+  "predicted_people": [
+    {
+      "person_id": 1,
+      "bbox_2d": [
+        126.0,
+        123.75,
+        255.6,
+        448.65
+      ],
+      "label": "not_interaction_ready",
+      "bbox_normalized_1000": [
+        175.0,
+        275.0,
+        355.0,
+        997.0
+      ]
+    }
+  ],
+  "image_error": null,
+  "parse_error": null,
+  "frame_group": 30,
+  "split": "Test",
+  "source_json": "AVIDAR__AVIDAR_004__group_000030.json",
+  "model": "Qwen/Qwen3-VL-2B-Instruct",
+  "zero_shot": true,
+  "context_frame_numbers": [
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143
+  ],
+  "target_frame_number": 144,
+  "target_image_width": 720,
+  "target_image_height": 450,
+  "raw_model_response": "{\n  \"people\": [\n    {\n      \"person_ID\": 1,\n      \"bbox\": [175, 275, 355, 997],\n      \"label\": \"not_interaction_ready\"\n    }\n  ]\n}",
+  "parsed_model_response": {
+    "people": [
+      {
+        "person_ID": 1,
+        "bbox": [
+          175,
+          275,
+          355,
+          997
+        ],
+        "label": "not_interaction_ready"
+      }
+    ]
+  },
+  "person_parse_errors": []
+}

@@ -1,0 +1,184 @@
+{
+  "people": [
+    {
+      "person_ID": 1,
+      "bbox": [
+        100,
+        400,
+        150,
+        580
+      ],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 2,
+      "bbox": [
+        150,
+        375,
+        200,
+        580
+      ],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 3,
+      "bbox": [
+        200,
+        375,
+        250,
+        580
+      ],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 4,
+      "bbox": [
+        250,
+        375,
+        300,
+        580
+      ],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 5,
+      "bbox": [
+        300,
+        375,
+        350,
+        580
+      ],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 6,
+      "bbox": [
+        350,
+        375,
+        400,
+        580
+      ],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 7,
+      "bbox": [
+        400,
+        375,
+        450,
+        580
+      ],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 8,
+      "bbox": [
+        450,
+        375,
+        500,
+        580
+      ],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 9,
+      "bbox": [
+        500,
+        375,
+        550,
+        580
+      ],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 10,
+      "bbox": [
+        550,
+        375,
+        600,
+        580
+      ],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 11,
+      "bbox": [
+        600,
+        375,
+        650,
+        580
+      ],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 12,
+      "bbox": [
+        650,
+        375,
+        700,
+        580
+      ],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 13,
+      "bbox": [
+        700,
+        375,
+        750,
+        580
+      ],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 14,
+      "bbox": [
+        750,
+        375,
+        800,
+        580
+      ],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 15,
+      "bbox": [
+        800,
+        375,
+        850,
+        580
+      ],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 16,
+      "bbox": [
+        850,
+        375,
+        900,
+        580
+      ],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 17,
+      "bbox": [
+        900,
+        375,
+        950,
+        580
+      ],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 18,
+      "bbox": [
+        950,
+        375,
+        1000,
+        580
+      ],
+      "label": "not_interaction_ready"
+    }
+  ]
+}

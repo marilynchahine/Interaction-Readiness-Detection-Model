@@ -1,0 +1,145 @@
+{
+  "source_dataset": "JRDB",
+  "video_id": "JRDB_002",
+  "frame_id": 174,
+  "ground_truth_people": [
+    {
+      "person_id": 2,
+      "bbox_xyxy": [
+        339.39,
+        162.7,
+        367.2,
+        256.1
+      ],
+      "label_original": "not_interaction_ready",
+      "label_3class": "not_interaction_ready"
+    },
+    {
+      "person_id": 4,
+      "bbox_xyxy": [
+        387.5,
+        154.3,
+        431.5,
+        265.1
+      ],
+      "label_original": "not_interaction_ready",
+      "label_3class": "not_interaction_ready"
+    }
+  ],
+  "predicted_people": [],
+  "image_error": null,
+  "parse_error": null,
+  "split": "Test",
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "zero_shot": true,
+  "temporal_method": "prediction_conditioned_rollout",
+  "target_frame_number": 174,
+  "target_image_width": 752,
+  "target_image_height": 480,
+  "rollout_previous_frame_numbers": [
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173
+  ],
+  "rollout_history_length": 8,
+  "rollout_padding_count": 7,
+  "rollout_context": [
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 166,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 167,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 168,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 169,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 170,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 171,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 172,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "previous_frame",
+      "dataset_frame_number": 173,
+      "prediction": {
+        "people": []
+      }
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 174,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 174,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 174,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 174,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 174,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 174,
+      "prediction": null
+    },
+    {
+      "kind": "target_padding",
+      "dataset_frame_number": 174,
+      "prediction": null
+    }
+  ],
+  "raw_model_response": "{\"people\":[]}"
+}

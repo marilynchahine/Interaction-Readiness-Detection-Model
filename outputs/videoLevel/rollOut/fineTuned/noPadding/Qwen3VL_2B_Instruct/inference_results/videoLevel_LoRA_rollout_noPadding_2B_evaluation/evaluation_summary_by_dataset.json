@@ -1,0 +1,209 @@
+{
+  "AVIDAR": {
+    "detection": {
+      "iou_threshold": 0.5,
+      "num_target_frames": 475,
+      "num_ground_truth_boxes": 884,
+      "num_predicted_boxes": 881,
+      "true_positives": 0,
+      "false_positives": 881,
+      "false_negatives": 884,
+      "mean_iou_true_positive_matches": 0.0,
+      "median_iou_true_positive_matches": 0.0,
+      "detection_precision": 0.0,
+      "detection_recall": 0.0,
+      "detection_f1": 0.0,
+      "frames_with_image_error": 0,
+      "frames_with_parse_error": 0
+    },
+    "classification": {
+      "num_matched_detections_used_for_classification": 0,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "weighted_f1": 0.0,
+      "per_class": [
+        {
+          "class": "not_interaction_ready",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 0
+        },
+        {
+          "class": "interaction_ready",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 0
+        },
+        {
+          "class": "interaction_ongoing",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 0
+        }
+      ],
+      "confusion_matrix_labels": [
+        "not_interaction_ready",
+        "interaction_ready",
+        "interaction_ongoing"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "JRDB": {
+    "detection": {
+      "iou_threshold": 0.5,
+      "num_target_frames": 282,
+      "num_ground_truth_boxes": 453,
+      "num_predicted_boxes": 430,
+      "true_positives": 10,
+      "false_positives": 420,
+      "false_negatives": 443,
+      "mean_iou_true_positive_matches": 0.6073693528157837,
+      "median_iou_true_positive_matches": 0.5854949900402765,
+      "detection_precision": 0.023255813953488372,
+      "detection_recall": 0.02207505518763797,
+      "detection_f1": 0.022650056625141565,
+      "frames_with_image_error": 0,
+      "frames_with_parse_error": 0
+    },
+    "classification": {
+      "num_matched_detections_used_for_classification": 10,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "weighted_f1": 0.0,
+      "per_class": [
+        {
+          "class": "not_interaction_ready",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 10
+        },
+        {
+          "class": "interaction_ready",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 0
+        },
+        {
+          "class": "interaction_ongoing",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 0
+        }
+      ],
+      "confusion_matrix_labels": [
+        "not_interaction_ready",
+        "interaction_ready",
+        "interaction_ongoing"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          10,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "SSUP-HRI": {
+    "detection": {
+      "iou_threshold": 0.5,
+      "num_target_frames": 1714,
+      "num_ground_truth_boxes": 1714,
+      "num_predicted_boxes": 4780,
+      "true_positives": 0,
+      "false_positives": 4780,
+      "false_negatives": 1714,
+      "mean_iou_true_positive_matches": 0.0,
+      "median_iou_true_positive_matches": 0.0,
+      "detection_precision": 0.0,
+      "detection_recall": 0.0,
+      "detection_f1": 0.0,
+      "frames_with_image_error": 0,
+      "frames_with_parse_error": 0
+    },
+    "classification": {
+      "num_matched_detections_used_for_classification": 0,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "weighted_f1": 0.0,
+      "per_class": [
+        {
+          "class": "not_interaction_ready",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 0
+        },
+        {
+          "class": "interaction_ready",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 0
+        },
+        {
+          "class": "interaction_ongoing",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 0
+        }
+      ],
+      "confusion_matrix_labels": [
+        "not_interaction_ready",
+        "interaction_ready",
+        "interaction_ongoing"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    }
+  }
+}

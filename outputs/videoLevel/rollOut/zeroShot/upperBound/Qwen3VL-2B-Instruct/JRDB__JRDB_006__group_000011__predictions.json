@@ -1,0 +1,64 @@
+{
+  "source_dataset": "JRDB",
+  "video_id": "JRDB_006",
+  "frame_id": 363,
+  "ground_truth_people": [
+    {
+      "person_id": 3,
+      "bbox_xyxy": [
+        238.3,
+        134.35,
+        275.23,
+        274.25
+      ],
+      "label_original": "not_interaction_ready",
+      "label_3class": "not_interaction_ready"
+    }
+  ],
+  "predicted_people": [
+    {
+      "person_id": 3,
+      "bbox_2d": [
+        150.4,
+        133.92,
+        225.6,
+        274.08
+      ],
+      "label": "not_interaction_ready",
+      "bbox_normalized_1000": [
+        200.0,
+        279.0,
+        300.0,
+        571.0
+      ]
+    }
+  ],
+  "image_error": null,
+  "parse_error": null,
+  "frame_group": 11,
+  "split": "Test",
+  "source_json": "JRDB__JRDB_006__group_000011.json",
+  "model": "Qwen/Qwen3-VL-2B-Instruct",
+  "zero_shot": true,
+  "context_frame_numbers": [
+    348,
+    349,
+    350,
+    351,
+    352,
+    353,
+    354,
+    355,
+    356,
+    357,
+    358,
+    359,
+    360,
+    361,
+    362
+  ],
+  "target_frame_number": 363,
+  "target_image_width": 752,
+  "target_image_height": 480,
+  "raw_model_response": "{\n  \"people\": [\n    {\n      \"person_ID\": 3,\n      \"bbox\": [200, 279, 300, 571],\n      \"label\": \"not_interaction_ready\"\n    }\n  ]\n}"
+}

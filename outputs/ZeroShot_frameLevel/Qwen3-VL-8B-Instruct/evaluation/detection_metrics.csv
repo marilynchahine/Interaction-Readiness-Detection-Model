@@ -1,2 +1,0 @@
-iou_threshold,num_frames,num_ground_truth_boxes,num_predicted_boxes,true_positives,false_positives,false_negatives,mean_iou_true_positive_matches,median_iou_true_positive_matches,detection_precision,detection_recall,detection_f1,frames_with_image_error,frames_with_parse_error
-0.5,2386,3041,9970,98,9872,2943,0.6381088213456156,0.6353413995472879,0.00982948846539619,0.03222624136797106,0.015064176466067173,0,0

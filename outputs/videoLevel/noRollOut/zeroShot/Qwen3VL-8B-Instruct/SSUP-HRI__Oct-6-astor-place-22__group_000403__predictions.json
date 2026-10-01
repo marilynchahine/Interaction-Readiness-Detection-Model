@@ -1,0 +1,105 @@
+{
+  "source_dataset": "SSUP-HRI",
+  "video_id": "Oct-6-astor-place-22",
+  "frame_id": 552,
+  "ground_truth_people": [
+    {
+      "person_id": 1,
+      "bbox_xyxy": [
+        807.64,
+        363.68,
+        1094.9,
+        906.01
+      ],
+      "label_original": "interaction_ongoing",
+      "label_3class": "interaction_ongoing"
+    }
+  ],
+  "predicted_people": [
+    {
+      "person_id": 1,
+      "bbox_2d": [
+        685.44,
+        324.0,
+        1056.0,
+        845.64
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        357.0,
+        300.0,
+        550.0,
+        783.0
+      ]
+    },
+    {
+      "person_id": 2,
+      "bbox_2d": [
+        1056.0,
+        197.64,
+        1536.0,
+        845.64
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        550.0,
+        183.0,
+        800.0,
+        783.0
+      ]
+    }
+  ],
+  "image_error": null,
+  "parse_error": null,
+  "frame_group": 403,
+  "split": "Test",
+  "source_json": "SSUP-HRI__Oct-6-astor-place-22__group_000403.json",
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "zero_shot": true,
+  "context_frame_numbers": [
+    537,
+    538,
+    539,
+    540,
+    541,
+    542,
+    543,
+    544,
+    545,
+    546,
+    547,
+    548,
+    549,
+    550,
+    551
+  ],
+  "target_frame_number": 552,
+  "target_image_width": 1920,
+  "target_image_height": 1080,
+  "raw_model_response": "{\"people\":[\n{\"person_ID\":1,\"bbox\":[357, 300, 550, 783],\"label\":\"interaction_ready\"},\n{\"person_ID\":2,\"bbox\":[550, 183, 800, 783],\"label\":\"interaction_ready\"}\n]}",
+  "parsed_model_response": {
+    "people": [
+      {
+        "person_ID": 1,
+        "bbox": [
+          357,
+          300,
+          550,
+          783
+        ],
+        "label": "interaction_ready"
+      },
+      {
+        "person_ID": 2,
+        "bbox": [
+          550,
+          183,
+          800,
+          783
+        ],
+        "label": "interaction_ready"
+      }
+    ]
+  },
+  "person_parse_errors": []
+}

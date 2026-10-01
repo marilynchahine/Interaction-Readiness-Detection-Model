@@ -1,0 +1,116 @@
+{
+  "source_dataset": "AVIDAR",
+  "video_id": "AVIDAR_026",
+  "frame_id": 181,
+  "ground_truth_people": [
+    {
+      "person_id": 1,
+      "bbox_xyxy": [
+        180.13,
+        43.06,
+        337.27,
+        446.26
+      ],
+      "label_original": "interaction_ready",
+      "label_3class": "interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox_xyxy": [
+        424.36,
+        80.72,
+        575.09,
+        445.46
+      ],
+      "label_original": "interaction_ready",
+      "label_3class": "interaction_ready"
+    }
+  ],
+  "predicted_people": [
+    {
+      "person_id": 1,
+      "bbox_2d": [
+        180.0,
+        44.1,
+        342.0,
+        449.1
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        250.0,
+        98.0,
+        475.0,
+        998.0
+      ]
+    },
+    {
+      "person_id": 2,
+      "bbox_2d": [
+        421.2,
+        80.1,
+        576.0,
+        449.1
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        585.0,
+        178.0,
+        800.0,
+        998.0
+      ]
+    }
+  ],
+  "image_error": null,
+  "parse_error": null,
+  "frame_group": 167,
+  "split": "Test",
+  "source_json": "AVIDAR__AVIDAR_026__group_000167.json",
+  "model": "Qwen/Qwen3-VL-4B-Instruct",
+  "zero_shot": true,
+  "context_frame_numbers": [
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180
+  ],
+  "target_frame_number": 181,
+  "target_image_width": 720,
+  "target_image_height": 450,
+  "raw_model_response": "{\"people\":[\n{\n\"person_ID\":1,\n\"bbox\":[250, 98, 475, 998],\n\"label\":\"interaction_ready\"\n},\n{\n\"person_ID\":2,\n\"bbox\":[585, 178, 800, 998],\n\"label\":\"interaction_ready\"\n}\n]}",
+  "parsed_model_response": {
+    "people": [
+      {
+        "person_ID": 1,
+        "bbox": [
+          250,
+          98,
+          475,
+          998
+        ],
+        "label": "interaction_ready"
+      },
+      {
+        "person_ID": 2,
+        "bbox": [
+          585,
+          178,
+          800,
+          998
+        ],
+        "label": "interaction_ready"
+      }
+    ]
+  },
+  "person_parse_errors": []
+}

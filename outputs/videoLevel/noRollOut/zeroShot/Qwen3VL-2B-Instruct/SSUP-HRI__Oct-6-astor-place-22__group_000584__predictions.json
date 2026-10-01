@@ -1,0 +1,169 @@
+{
+  "source_dataset": "SSUP-HRI",
+  "video_id": "Oct-6-astor-place-22",
+  "frame_id": 802,
+  "ground_truth_people": [
+    {
+      "person_id": 1,
+      "bbox_xyxy": [
+        862.29,
+        327.29,
+        1080.77,
+        677.26
+      ],
+      "label_original": "not_interaction_ready",
+      "label_3class": "not_interaction_ready"
+    }
+  ],
+  "predicted_people": [
+    {
+      "person_id": 1,
+      "bbox_2d": [
+        787.2,
+        367.2,
+        1128.96,
+        799.2
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        410.0,
+        340.0,
+        588.0,
+        740.0
+      ]
+    },
+    {
+      "person_id": 2,
+      "bbox_2d": [
+        1128.96,
+        270.0,
+        1493.76,
+        799.2
+      ],
+      "label": "not_interaction_ready",
+      "bbox_normalized_1000": [
+        588.0,
+        250.0,
+        778.0,
+        740.0
+      ]
+    },
+    {
+      "person_id": 3,
+      "bbox_2d": [
+        1493.76,
+        270.0,
+        1839.36,
+        799.2
+      ],
+      "label": "not_interaction_ready",
+      "bbox_normalized_1000": [
+        778.0,
+        250.0,
+        958.0,
+        740.0
+      ]
+    },
+    {
+      "person_id": 4,
+      "bbox_2d": [
+        1839.36,
+        270.0,
+        1920.0,
+        799.2
+      ],
+      "label": "not_interaction_ready",
+      "bbox_normalized_1000": [
+        958.0,
+        250.0,
+        1138.0,
+        740.0
+      ]
+    }
+  ],
+  "image_error": null,
+  "parse_error": "ValueError: people[4] produced a zero-area bbox.",
+  "frame_group": 584,
+  "split": "Test",
+  "source_json": "SSUP-HRI__Oct-6-astor-place-22__group_000584.json",
+  "model": "Qwen/Qwen3-VL-2B-Instruct",
+  "zero_shot": true,
+  "context_frame_numbers": [
+    787,
+    788,
+    789,
+    790,
+    791,
+    792,
+    793,
+    794,
+    795,
+    796,
+    797,
+    798,
+    799,
+    800,
+    801
+  ],
+  "target_frame_number": 802,
+  "target_image_width": 1920,
+  "target_image_height": 1080,
+  "raw_model_response": "{\n  \"people\": [\n    {\n      \"person_ID\": 1,\n      \"bbox\": [410, 340, 588, 740],\n      \"label\": \"interaction_ready\"\n    },\n    {\n      \"person_ID\": 2,\n      \"bbox\": [588, 250, 778, 740],\n      \"label\": \"not_interaction_ready\"\n    },\n    {\n      \"person_ID\": 3,\n      \"bbox\": [778, 250, 958, 740],\n      \"label\": \"not_interaction_ready\"\n    },\n    {\n      \"person_ID\": 4,\n      \"bbox\": [958, 250, 1138, 740],\n      \"label\": \"not_interaction_ready\"\n    },\n    {\n      \"person_ID\": 5,\n      \"bbox\": [1138, 250, 1318, 740],\n      \"label\": \"not_interaction_ready\"\n    }\n  ]\n}",
+  "parsed_model_response": {
+    "people": [
+      {
+        "person_ID": 1,
+        "bbox": [
+          410,
+          340,
+          588,
+          740
+        ],
+        "label": "interaction_ready"
+      },
+      {
+        "person_ID": 2,
+        "bbox": [
+          588,
+          250,
+          778,
+          740
+        ],
+        "label": "not_interaction_ready"
+      },
+      {
+        "person_ID": 3,
+        "bbox": [
+          778,
+          250,
+          958,
+          740
+        ],
+        "label": "not_interaction_ready"
+      },
+      {
+        "person_ID": 4,
+        "bbox": [
+          958,
+          250,
+          1138,
+          740
+        ],
+        "label": "not_interaction_ready"
+      },
+      {
+        "person_ID": 5,
+        "bbox": [
+          1138,
+          250,
+          1318,
+          740
+        ],
+        "label": "not_interaction_ready"
+      }
+    ]
+  },
+  "person_parse_errors": [
+    "ValueError: people[4] produced a zero-area bbox."
+  ]
+}

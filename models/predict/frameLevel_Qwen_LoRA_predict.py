@@ -33,11 +33,11 @@ INPUT_CSV = Path(
 INFERENCE_SPLIT = "test"
 
 # Folder where predictions, raw responses, and annotated images are saved.
-OUTPUT_DIR = Path(r"/home/marilyn/Downloads/Interaction-Readiness-Detection-Model-main/outputs/resized/Qwen3VL_4B_Instruct_LoRA/inference_results")
+OUTPUT_DIR = Path(r"/home/marilyn/Downloads/Interaction-Readiness-Detection-Model-main/outputs/resized/Qwen3VL_8B_Instruct_LoRA/inference_results")
 
-LORA_CHECKPOINT = Path(r"/home/marilyn/Downloads/Interaction-Readiness-Detection-Model-main/outputs/fineTuned_frameLevel/Qwen3-VL_4B_LoRA/final_adapter")
+LORA_CHECKPOINT = Path(r"/home/marilyn/Downloads/Interaction-Readiness-Detection-Model-main/outputs/resized/Qwen3VL_8B_Instruct_LoRA/final_adapter")
 
-MODEL_NAME = "Qwen/Qwen3-VL-4B-Instruct"
+MODEL_NAME = "Qwen/Qwen3-VL-8B-Instruct"
 LOAD_IN_4BIT = False
 MAX_NEW_TOKENS = 1024
 
@@ -59,7 +59,7 @@ IMAGE_BASE_DIRECTORY: Path | None = None
 # One of: "original", "processed", "normalized_1000".
 COORDINATE_MODE = "original"
 
-SAVE_ANNOTATED = True
+SAVE_ANNOTATED = False
 OVERWRITE = False
 
 # Display the first N unique test frames before inference to verify image loading.
@@ -125,6 +125,13 @@ Important instructions:
 - Do not invent people who are not visible.
 - Include a partially visible person when a meaningful box can be produced.
 - Bounding boxes must use [x1, y1, x2, y2].
+- Bounding-box coordinates must be normalized to the range 0 to 1000 relative to the full image.
+- x coordinates are relative to the full image width.
+- y coordinates are relative to the full image height.
+- The top-left corner of the image is [0, 0].
+- The bottom-right corner of the image is [1000, 1000].
+- All bounding-box coordinates must be integers between 0 and 1000.
+- Ensure x1 < x2 and y1 < y2.
 - Return only valid JSON.
 - Do not include Markdown fences.
 - Do not include explanations outside the JSON.

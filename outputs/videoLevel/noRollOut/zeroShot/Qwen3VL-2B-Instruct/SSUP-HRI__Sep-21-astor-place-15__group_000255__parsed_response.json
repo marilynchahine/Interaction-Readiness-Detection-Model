@@ -1,0 +1,14 @@
+{
+  "people": [
+    {
+      "person_ID": 1,
+      "bbox": [
+        388,
+        330,
+        578,
+        780
+      ],
+      "label": "interaction_ready"
+    }
+  ]
+}

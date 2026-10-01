@@ -1,0 +1,54 @@
+{
+  "people": [
+    {
+      "person_ID": 1,
+      "bbox": [
+        250,
+        333,
+        340,
+        550
+      ],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 2,
+      "bbox": [
+        380,
+        327,
+        500,
+        650
+      ],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 3,
+      "bbox": [
+        490,
+        350,
+        580,
+        580
+      ],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 4,
+      "bbox": [
+        750,
+        333,
+        980,
+        650
+      ],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 5,
+      "bbox": [
+        650,
+        350,
+        750,
+        550
+      ],
+      "label": "not_interaction_ready"
+    }
+  ]
+}

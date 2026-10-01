@@ -1,0 +1,13 @@
+source_dataset,video_id,frame_group,target_frame_id,split,gt_person_id,pred_person_id,gt_bbox_xyxy,pred_bbox_xyxy,iou,gt_label,pred_label,classification_correct
+JRDB,JRDB_004,,820,Test,2,1,"[417.9, 64.9, 541.3, 384.5]","[367.352, 69.36, 526.776, 419.76]",0.5625740695627302,not_interaction_ready,interaction_ready,False
+JRDB,JRDB_004,,821,Test,2,1,"[403.05, 64.2, 529.1, 384.5]","[367.352, 69.36, 526.776, 419.76]",0.681125514152046,not_interaction_ready,interaction_ready,False
+JRDB,JRDB_004,,822,Test,2,1,"[388.2, 63.5, 521.8, 384.5]","[367.352, 69.36, 526.776, 419.76]",0.7432722259924438,not_interaction_ready,interaction_ready,False
+JRDB,JRDB_004,,823,Test,2,1,"[371.05, 61.1, 503.25, 384.15]","[367.352, 69.36, 526.776, 419.76]",0.730679750952475,not_interaction_ready,interaction_ready,False
+JRDB,JRDB_004,,824,Test,2,1,"[353.9, 58.7, 489.6, 383.8]","[367.352, 69.36, 526.776, 419.76]",0.6246433061903256,not_interaction_ready,interaction_ready,False
+JRDB,JRDB_004,,838,Test,5,1,"[412.5, 14.5, 512.1, 388.6]","[367.352, 69.36, 526.776, 419.76]",0.5184780848472764,not_interaction_ready,interaction_ready,False
+JRDB,JRDB_004,,839,Test,5,1,"[400.7, 15.1, 497.2, 386.0]","[367.352, 69.36, 526.776, 419.76]",0.5001085170026677,not_interaction_ready,interaction_ready,False
+JRDB,JRDB_004,,858,Test,1,1,"[398.5, 0.0, 577.7, 427.7]","[367.352, 69.36, 526.776, 419.76]",0.513349545166919,not_interaction_ready,interaction_ready,False
+JRDB,JRDB_004,,859,Test,1,1,"[378.7, 0.0, 557.1, 430.3]","[367.352, 69.36, 526.776, 419.76]",0.6426137682992561,not_interaction_ready,interaction_ready,False
+JRDB,JRDB_004,,860,Test,1,1,"[358.9, 0.0, 536.5, 436.0]","[367.352, 69.36, 526.776, 419.76]",0.7214202826679889,not_interaction_ready,interaction_ready,False
+JRDB,JRDB_004,,861,Test,1,1,"[343.85, 0.0, 515.9, 440.55]","[367.352, 69.36, 526.776, 419.76]",0.6538475428229303,not_interaction_ready,interaction_ready,False
+JRDB,JRDB_004,,862,Test,1,1,"[328.8, 0.0, 507.7, 445.1]","[367.352, 69.36, 526.776, 419.76]",0.5697653364258191,not_interaction_ready,interaction_ready,False

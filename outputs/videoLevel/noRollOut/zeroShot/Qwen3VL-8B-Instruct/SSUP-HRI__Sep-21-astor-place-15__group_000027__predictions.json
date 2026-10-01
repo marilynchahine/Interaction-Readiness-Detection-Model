@@ -1,0 +1,131 @@
+{
+  "source_dataset": "SSUP-HRI",
+  "video_id": "Sep-21-astor-place-15",
+  "frame_id": 281,
+  "ground_truth_people": [
+    {
+      "person_id": 1,
+      "bbox_xyxy": [
+        917.84,
+        426.89,
+        1024.32,
+        628.46
+      ],
+      "label_original": "interaction_ready",
+      "label_3class": "interaction_ready"
+    }
+  ],
+  "predicted_people": [
+    {
+      "person_id": 1,
+      "bbox_2d": [
+        480.0,
+        413.64,
+        672.0,
+        629.64
+      ],
+      "label": "not_interaction_ready",
+      "bbox_normalized_1000": [
+        250.0,
+        383.0,
+        350.0,
+        583.0
+      ]
+    },
+    {
+      "person_id": 2,
+      "bbox_2d": [
+        864.0,
+        426.6,
+        1017.6,
+        594.0
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        450.0,
+        395.0,
+        530.0,
+        550.0
+      ]
+    },
+    {
+      "person_id": 3,
+      "bbox_2d": [
+        1632.0,
+        243.0,
+        1918.08,
+        783.0
+      ],
+      "label": "interaction_ongoing",
+      "bbox_normalized_1000": [
+        850.0,
+        225.0,
+        999.0,
+        725.0
+      ]
+    }
+  ],
+  "image_error": null,
+  "parse_error": null,
+  "frame_group": 27,
+  "split": "Test",
+  "source_json": "SSUP-HRI__Sep-21-astor-place-15__group_000027.json",
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "zero_shot": true,
+  "context_frame_numbers": [
+    266,
+    267,
+    268,
+    269,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275,
+    276,
+    277,
+    278,
+    279,
+    280
+  ],
+  "target_frame_number": 281,
+  "target_image_width": 1920,
+  "target_image_height": 1080,
+  "raw_model_response": "{\"people\":[\n{\"person_ID\":1,\"bbox\":[250, 383, 350, 583],\"label\":\"not_interaction_ready\"},\n{\"person_ID\":2,\"bbox\":[450, 395, 530, 550],\"label\":\"interaction_ready\"},\n{\"person_ID\":3,\"bbox\":[850, 225, 999, 725],\"label\":\"interaction_ongoing\"}\n]}",
+  "parsed_model_response": {
+    "people": [
+      {
+        "person_ID": 1,
+        "bbox": [
+          250,
+          383,
+          350,
+          583
+        ],
+        "label": "not_interaction_ready"
+      },
+      {
+        "person_ID": 2,
+        "bbox": [
+          450,
+          395,
+          530,
+          550
+        ],
+        "label": "interaction_ready"
+      },
+      {
+        "person_ID": 3,
+        "bbox": [
+          850,
+          225,
+          999,
+          725
+        ],
+        "label": "interaction_ongoing"
+      }
+    ]
+  },
+  "person_parse_errors": []
+}

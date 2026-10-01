@@ -1,0 +1,131 @@
+{
+  "source_dataset": "JRDB",
+  "video_id": "JRDB_006",
+  "frame_id": 386,
+  "ground_truth_people": [
+    {
+      "person_id": 3,
+      "bbox_xyxy": [
+        208.91,
+        110.2,
+        259.77,
+        306.5
+      ],
+      "label_original": "not_interaction_ready",
+      "label_3class": "not_interaction_ready"
+    }
+  ],
+  "predicted_people": [
+    {
+      "person_id": 1,
+      "bbox_2d": [
+        112.8,
+        110.4,
+        210.56,
+        345.6
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        150.0,
+        230.0,
+        280.0,
+        720.0
+      ]
+    },
+    {
+      "person_id": 2,
+      "bbox_2d": [
+        210.56,
+        110.4,
+        308.32,
+        331.2
+      ],
+      "label": "not_interaction_ready",
+      "bbox_normalized_1000": [
+        280.0,
+        230.0,
+        410.0,
+        690.0
+      ]
+    },
+    {
+      "person_id": 3,
+      "bbox_2d": [
+        308.32,
+        110.4,
+        406.08,
+        331.2
+      ],
+      "label": "interaction_ongoing",
+      "bbox_normalized_1000": [
+        410.0,
+        230.0,
+        540.0,
+        690.0
+      ]
+    }
+  ],
+  "image_error": null,
+  "parse_error": null,
+  "frame_group": 34,
+  "split": "Test",
+  "source_json": "JRDB__JRDB_006__group_000034.json",
+  "model": "Qwen/Qwen3-VL-2B-Instruct",
+  "zero_shot": true,
+  "context_frame_numbers": [
+    371,
+    372,
+    373,
+    374,
+    375,
+    376,
+    377,
+    378,
+    379,
+    380,
+    381,
+    382,
+    383,
+    384,
+    385
+  ],
+  "target_frame_number": 386,
+  "target_image_width": 752,
+  "target_image_height": 480,
+  "raw_model_response": "{\n  \"people\": [\n    {\n      \"person_ID\": 1,\n      \"bbox\": [150, 230, 280, 720],\n      \"label\": \"interaction_ready\"\n    },\n    {\n      \"person_ID\": 2,\n      \"bbox\": [280, 230, 410, 690],\n      \"label\": \"not_interaction_ready\"\n    },\n    {\n      \"person_ID\": 3,\n      \"bbox\": [410, 230, 540, 690],\n      \"label\": \"interaction_ongoing\"\n    }\n  ]\n}",
+  "parsed_model_response": {
+    "people": [
+      {
+        "person_ID": 1,
+        "bbox": [
+          150,
+          230,
+          280,
+          720
+        ],
+        "label": "interaction_ready"
+      },
+      {
+        "person_ID": 2,
+        "bbox": [
+          280,
+          230,
+          410,
+          690
+        ],
+        "label": "not_interaction_ready"
+      },
+      {
+        "person_ID": 3,
+        "bbox": [
+          410,
+          230,
+          540,
+          690
+        ],
+        "label": "interaction_ongoing"
+      }
+    ]
+  },
+  "person_parse_errors": []
+}

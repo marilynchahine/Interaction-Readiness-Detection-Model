@@ -1,0 +1,7 @@
+{"people":[
+{"person_ID":1,"bbox":[530, 212, 857, 821],"label":"not_interaction_ready"},
+{"person_ID":2,"bbox":[412, 354, 530, 554],"label":"not_interaction_ready"},
+{"person_ID":3,"bbox":[357, 375, 425, 554],"label":"not_interaction_ready"},
+{"person_ID":4,"bbox":[157, 395, 230, 554],"label":"not_interaction_ready"},
+{"person_ID":5,"bbox":[112, 406, 157, 554],"label":"not_interaction_ready"}
+]}

@@ -1,0 +1,183 @@
+{
+  "source_dataset": "SSUP-HRI",
+  "video_id": "Sep-21-astor-place-15",
+  "frame_id": 320,
+  "ground_truth_people": [
+    {
+      "person_id": 1,
+      "bbox_xyxy": [
+        861.06,
+        338.33,
+        1102.58,
+        770.9
+      ],
+      "label_original": "interaction_ready",
+      "label_3class": "interaction_ready"
+    }
+  ],
+  "predicted_people": [
+    {
+      "person_id": 1,
+      "bbox_2d": [
+        808.32,
+        345.6,
+        1104.0,
+        708.48
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        421.0,
+        320.0,
+        575.0,
+        656.0
+      ]
+    },
+    {
+      "person_id": 2,
+      "bbox_2d": [
+        51.84,
+        147.96,
+        336.0,
+        594.0
+      ],
+      "label": "not_interaction_ready",
+      "bbox_normalized_1000": [
+        27.0,
+        137.0,
+        175.0,
+        550.0
+      ]
+    },
+    {
+      "person_id": 3,
+      "bbox_2d": [
+        422.4,
+        480.6,
+        551.04,
+        621.0
+      ],
+      "label": "not_interaction_ready",
+      "bbox_normalized_1000": [
+        220.0,
+        445.0,
+        287.0,
+        575.0
+      ]
+    },
+    {
+      "person_id": 4,
+      "bbox_2d": [
+        551.04,
+        471.96,
+        662.4,
+        621.0
+      ],
+      "label": "not_interaction_ready",
+      "bbox_normalized_1000": [
+        287.0,
+        437.0,
+        345.0,
+        575.0
+      ]
+    },
+    {
+      "person_id": 5,
+      "bbox_2d": [
+        1104.0,
+        459.0,
+        1344.0,
+        741.96
+      ],
+      "label": "not_interaction_ready",
+      "bbox_normalized_1000": [
+        575.0,
+        425.0,
+        700.0,
+        687.0
+      ]
+    }
+  ],
+  "image_error": null,
+  "parse_error": null,
+  "frame_group": 66,
+  "split": "Test",
+  "source_json": "SSUP-HRI__Sep-21-astor-place-15__group_000066.json",
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "zero_shot": true,
+  "context_frame_numbers": [
+    305,
+    306,
+    307,
+    308,
+    309,
+    310,
+    311,
+    312,
+    313,
+    314,
+    315,
+    316,
+    317,
+    318,
+    319
+  ],
+  "target_frame_number": 320,
+  "target_image_width": 1920,
+  "target_image_height": 1080,
+  "raw_model_response": "{\"people\":[\n{\"person_ID\":1,\"bbox\":[421, 320, 575, 656],\"label\":\"interaction_ready\"},\n{\"person_ID\":2,\"bbox\":[27, 137, 175, 550],\"label\":\"not_interaction_ready\"},\n{\"person_ID\":3,\"bbox\":[220, 445, 287, 575],\"label\":\"not_interaction_ready\"},\n{\"person_ID\":4,\"bbox\":[287, 437, 345, 575],\"label\":\"not_interaction_ready\"},\n{\"person_ID\":5,\"bbox\":[575, 425, 700, 687],\"label\":\"not_interaction_ready\"}\n]}",
+  "parsed_model_response": {
+    "people": [
+      {
+        "person_ID": 1,
+        "bbox": [
+          421,
+          320,
+          575,
+          656
+        ],
+        "label": "interaction_ready"
+      },
+      {
+        "person_ID": 2,
+        "bbox": [
+          27,
+          137,
+          175,
+          550
+        ],
+        "label": "not_interaction_ready"
+      },
+      {
+        "person_ID": 3,
+        "bbox": [
+          220,
+          445,
+          287,
+          575
+        ],
+        "label": "not_interaction_ready"
+      },
+      {
+        "person_ID": 4,
+        "bbox": [
+          287,
+          437,
+          345,
+          575
+        ],
+        "label": "not_interaction_ready"
+      },
+      {
+        "person_ID": 5,
+        "bbox": [
+          575,
+          425,
+          700,
+          687
+        ],
+        "label": "not_interaction_ready"
+      }
+    ]
+  },
+  "person_parse_errors": []
+}

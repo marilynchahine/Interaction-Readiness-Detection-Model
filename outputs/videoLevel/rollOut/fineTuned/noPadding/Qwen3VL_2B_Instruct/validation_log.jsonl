@@ -1,0 +1,4 @@
+{"optimizer_step": 1000, "validation_loss": 0.5701251700520515, "num_examples": 32}
+{"optimizer_step": 2000, "validation_loss": 0.5626335088163614, "num_examples": 32}
+{"optimizer_step": 3000, "validation_loss": 0.5592624321579933, "num_examples": 32}
+{"optimizer_step": 4000, "validation_loss": 0.5583796286955476, "num_examples": 32}

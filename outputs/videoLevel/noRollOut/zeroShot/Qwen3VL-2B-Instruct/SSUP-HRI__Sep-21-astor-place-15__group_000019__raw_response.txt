@@ -1,0 +1,94 @@
+{
+  "people": [
+    {
+      "person_ID": 1,
+      "bbox": [100, 400, 150, 500],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 2,
+      "bbox": [150, 380, 200, 480],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 3,
+      "bbox": [200, 370, 250, 470],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 4,
+      "bbox": [250, 360, 300, 460],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 5,
+      "bbox": [300, 350, 350, 450],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 6,
+      "bbox": [350, 340, 400, 440],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 7,
+      "bbox": [400, 330, 450, 430],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 8,
+      "bbox": [450, 320, 500, 420],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 9,
+      "bbox": [500, 310, 550, 410],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 10,
+      "bbox": [550, 300, 600, 400],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 11,
+      "bbox": [600, 290, 650, 390],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 12,
+      "bbox": [650, 280, 700, 380],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 13,
+      "bbox": [700, 270, 750, 370],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 14,
+      "bbox": [750, 260, 800, 360],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 15,
+      "bbox": [800, 250, 850, 350],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 16,
+      "bbox": [850, 240, 900, 340],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 17,
+      "bbox": [900, 230, 950, 330],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_ID": 18,
+      "bbox": [950, 220, 1000, 320],
+      "label": "not_interaction_ready"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "source_dataset": "SSUP-HRI",
+  "video_id": "Sep-21-astor-place-15",
+  "frame_id": 424,
+  "ground_truth_people": [
+    {
+      "person_id": 1,
+      "bbox_xyxy": [
+        851.95,
+        416.57,
+        1024.14,
+        664.84
+      ],
+      "label_original": "interaction_ready",
+      "label_3class": "interaction_ready"
+    }
+  ],
+  "predicted_people": [
+    {
+      "person_id": 1,
+      "bbox_2d": [
+        437.76,
+        419.04,
+        624.0,
+        635.04
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        228.0,
+        388.0,
+        325.0,
+        588.0
+      ]
+    },
+    {
+      "person_id": 2,
+      "bbox_2d": [
+        624.0,
+        422.28,
+        816.0,
+        638.28
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        325.0,
+        391.0,
+        425.0,
+        591.0
+      ]
+    },
+    {
+      "person_id": 3,
+      "bbox_2d": [
+        816.0,
+        405.0,
+        1008.0,
+        635.04
+      ],
+      "label": "interaction_ongoing",
+      "bbox_normalized_1000": [
+        425.0,
+        375.0,
+        525.0,
+        588.0
+      ]
+    }
+  ],
+  "image_error": null,
+  "parse_error": null,
+  "frame_group": 170,
+  "split": "Test",
+  "source_json": "SSUP-HRI__Sep-21-astor-place-15__group_000170.json",
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "zero_shot": true,
+  "context_frame_numbers": [
+    409,
+    410,
+    411,
+    412,
+    413,
+    414,
+    415,
+    416,
+    417,
+    418,
+    419,
+    420,
+    421,
+    422,
+    423
+  ],
+  "target_frame_number": 424,
+  "target_image_width": 1920,
+  "target_image_height": 1080,
+  "raw_model_response": "{\"people\":[\n{\"person_ID\":1,\"bbox\":[228,388,325,588],\"label\":\"interaction_ready\"},\n{\"person_ID\":2,\"bbox\":[325,391,425,591],\"label\":\"interaction_ready\"},\n{\"person_ID\":3,\"bbox\":[425,375,525,588],\"label\":\"interaction_ongoing\"}\n]}",
+  "parsed_model_response": {
+    "people": [
+      {
+        "person_ID": 1,
+        "bbox": [
+          228,
+          388,
+          325,
+          588
+        ],
+        "label": "interaction_ready"
+      },
+      {
+        "person_ID": 2,
+        "bbox": [
+          325,
+          391,
+          425,
+          591
+        ],
+        "label": "interaction_ready"
+      },
+      {
+        "person_ID": 3,
+        "bbox": [
+          425,
+          375,
+          525,
+          588
+        ],
+        "label": "interaction_ongoing"
+      }
+    ]
+  },
+  "person_parse_errors": []
+}

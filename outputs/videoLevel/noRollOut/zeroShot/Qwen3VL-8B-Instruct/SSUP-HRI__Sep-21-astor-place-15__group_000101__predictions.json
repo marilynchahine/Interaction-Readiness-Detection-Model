@@ -1,0 +1,131 @@
+{
+  "source_dataset": "SSUP-HRI",
+  "video_id": "Sep-21-astor-place-15",
+  "frame_id": 355,
+  "ground_truth_people": [
+    {
+      "person_id": 1,
+      "bbox_xyxy": [
+        816.73,
+        306.46,
+        1038.0,
+        731.0
+      ],
+      "label_original": "interaction_ready",
+      "label_3class": "interaction_ready"
+    }
+  ],
+  "predicted_people": [
+    {
+      "person_id": 1,
+      "bbox_2d": [
+        808.32,
+        255.96,
+        1119.36,
+        741.96
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        421.0,
+        237.0,
+        583.0,
+        687.0
+      ]
+    },
+    {
+      "person_id": 2,
+      "bbox_2d": [
+        19.2,
+        108.0,
+        326.4,
+        567.0
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        10.0,
+        100.0,
+        170.0,
+        525.0
+      ]
+    },
+    {
+      "person_id": 3,
+      "bbox_2d": [
+        230.4,
+        243.0,
+        464.64,
+        567.0
+      ],
+      "label": "not_interaction_ready",
+      "bbox_normalized_1000": [
+        120.0,
+        225.0,
+        242.0,
+        525.0
+      ]
+    }
+  ],
+  "image_error": null,
+  "parse_error": null,
+  "frame_group": 101,
+  "split": "Test",
+  "source_json": "SSUP-HRI__Sep-21-astor-place-15__group_000101.json",
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "zero_shot": true,
+  "context_frame_numbers": [
+    340,
+    341,
+    342,
+    343,
+    344,
+    345,
+    346,
+    347,
+    348,
+    349,
+    350,
+    351,
+    352,
+    353,
+    354
+  ],
+  "target_frame_number": 355,
+  "target_image_width": 1920,
+  "target_image_height": 1080,
+  "raw_model_response": "{\"people\":[\n{\"person_ID\":1,\"bbox\":[421, 237, 583, 687],\"label\":\"interaction_ready\"},\n{\"person_ID\":2,\"bbox\":[10, 100, 170, 525],\"label\":\"interaction_ready\"},\n{\"person_ID\":3,\"bbox\":[120, 225, 242, 525],\"label\":\"not_interaction_ready\"}\n]}",
+  "parsed_model_response": {
+    "people": [
+      {
+        "person_ID": 1,
+        "bbox": [
+          421,
+          237,
+          583,
+          687
+        ],
+        "label": "interaction_ready"
+      },
+      {
+        "person_ID": 2,
+        "bbox": [
+          10,
+          100,
+          170,
+          525
+        ],
+        "label": "interaction_ready"
+      },
+      {
+        "person_ID": 3,
+        "bbox": [
+          120,
+          225,
+          242,
+          525
+        ],
+        "label": "not_interaction_ready"
+      }
+    ]
+  },
+  "person_parse_errors": []
+}

@@ -1,0 +1,11 @@
+source_dataset,video_id,frame_group,target_frame_id,split,gt_person_id,pred_person_id,gt_bbox_xyxy,pred_bbox_xyxy,iou,gt_label,pred_label,classification_correct
+JRDB,JRDB_004,,821,Test,2,1,"[403.05, 64.2, 529.1, 384.5]","[360.96, 59.52, 564.0, 419.52]",0.5523516849444007,not_interaction_ready,interaction_ready,False
+JRDB,JRDB_004,,822,Test,2,1,"[388.2, 63.5, 521.8, 384.5]","[360.96, 59.52, 564.0, 419.52]",0.5867152613606512,not_interaction_ready,interaction_ready,False
+JRDB,JRDB_004,,823,Test,2,1,"[371.05, 61.1, 503.25, 384.15]","[360.96, 59.52, 564.0, 419.52]",0.5842747187199018,not_interaction_ready,interaction_ready,False
+JRDB,JRDB_004,,824,Test,2,1,"[353.9, 58.7, 489.6, 383.8]","[360.96, 59.52, 564.0, 419.52]",0.5525575074876261,not_interaction_ready,interaction_ready,False
+JRDB,JRDB_004,,857,Test,1,1,"[429.85, 0.0, 582.96, 427.0]","[360.96, 59.52, 564.0, 419.52]",0.5355386219555751,not_interaction_ready,interaction_ready,False
+JRDB,JRDB_004,,858,Test,1,1,"[398.5, 0.0, 577.7, 427.7]","[360.96, 59.52, 564.0, 419.52]",0.6608380997676971,not_interaction_ready,interaction_ready,False
+JRDB,JRDB_004,,859,Test,1,1,"[378.7, 0.0, 557.1, 430.3]","[360.96, 59.52, 564.0, 419.52]",0.7499656686119562,not_interaction_ready,interaction_ready,False
+JRDB,JRDB_004,,860,Test,1,1,"[358.9, 0.0, 536.5, 436.0]","[360.96, 59.52, 564.0, 419.52]",0.7235977905410977,not_interaction_ready,interaction_ready,False
+JRDB,JRDB_004,,861,Test,1,1,"[343.85, 0.0, 515.9, 440.55]","[360.96, 59.52, 564.0, 419.52]",0.5990422727572584,not_interaction_ready,interaction_ready,False
+JRDB,JRDB_004,,862,Test,1,1,"[328.8, 0.0, 507.7, 445.1]","[360.96, 59.52, 564.0, 419.52]",0.5288119020116743,not_interaction_ready,interaction_ready,False

@@ -1,0 +1,116 @@
+{
+  "source_dataset": "AVIDAR",
+  "video_id": "AVIDAR_026",
+  "frame_id": 89,
+  "ground_truth_people": [
+    {
+      "person_id": 1,
+      "bbox_xyxy": [
+        176.68,
+        44.27,
+        330.31,
+        446.09
+      ],
+      "label_original": "interaction_ready",
+      "label_3class": "interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox_xyxy": [
+        427.48,
+        84.39,
+        579.3,
+        445.98
+      ],
+      "label_original": "interaction_ready",
+      "label_3class": "interaction_ready"
+    }
+  ],
+  "predicted_people": [
+    {
+      "person_id": 1,
+      "bbox_2d": [
+        174.24,
+        45.0,
+        336.96,
+        448.65
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        242.0,
+        100.0,
+        468.0,
+        997.0
+      ]
+    },
+    {
+      "person_id": 2,
+      "bbox_2d": [
+        426.24,
+        78.75,
+        586.8,
+        448.65
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        592.0,
+        175.0,
+        815.0,
+        997.0
+      ]
+    }
+  ],
+  "image_error": null,
+  "parse_error": null,
+  "frame_group": 75,
+  "split": "Test",
+  "source_json": "AVIDAR__AVIDAR_026__group_000075.json",
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "zero_shot": true,
+  "context_frame_numbers": [
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88
+  ],
+  "target_frame_number": 89,
+  "target_image_width": 720,
+  "target_image_height": 450,
+  "raw_model_response": "{\"people\":[\n{\"person_ID\":1,\"bbox\":[242,100,468,997],\"label\":\"interaction_ready\"},\n{\"person_ID\":2,\"bbox\":[592,175,815,997],\"label\":\"interaction_ready\"}\n]}",
+  "parsed_model_response": {
+    "people": [
+      {
+        "person_ID": 1,
+        "bbox": [
+          242,
+          100,
+          468,
+          997
+        ],
+        "label": "interaction_ready"
+      },
+      {
+        "person_ID": 2,
+        "bbox": [
+          592,
+          175,
+          815,
+          997
+        ],
+        "label": "interaction_ready"
+      }
+    ]
+  },
+  "person_parse_errors": []
+}

@@ -1,0 +1,24 @@
+{
+  "people": [
+    {
+      "person_id": 1,
+      "bbox": [467, 332, 557, 656],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 2,
+      "bbox": [660, 217, 817, 520],
+      "label": "interaction_ready"
+    },
+    {
+      "person_id": 3,
+      "bbox": [317, 340, 433, 582],
+      "label": "not_interaction_ready"
+    },
+    {
+      "person_id": 4,
+      "bbox": [0, 374, 141, 646],
+      "label": "not_interaction_ready"
+    }
+  ]
+}

@@ -65,6 +65,12 @@ confusion_matrix.png
 matched_predictions.csv
 frame_detection_details.csv
 all_iou_pairs_before_hungarian.csv
+
+Additional per-dataset outputs
+------------------------------
+dataset_comparison.csv
+evaluation_summary_by_dataset.json
+by_dataset/<source_dataset>/...
 """
 
 from __future__ import annotations
@@ -88,24 +94,14 @@ from sklearn.metrics import (
 # ==============================================================================
 # CONFIGURATION — EDIT THESE VALUES
 # ==============================================================================
-"""
+
 PREDICTIONS_JSONL = Path(
-    r"/home/marilyn/Downloads/Interaction-Readiness-Detection-Model-main/outputs/ZeroShot_frameLevel/GLM46V_FLASH/predictions.jsonl"
+    r"/home/marilyn/Downloads/Interaction-Readiness-Detection-Model-main/outputs/frameLevel_zeroShot/Qwen3-VL-8B-Instruct/predictions.jsonl"
 )
 
 OUTPUT_DIR = Path(
-    r"/home/marilyn/Downloads/Interaction-Readiness-Detection-Model-main/outputs/ZeroShot_frameLevel/GLM46V_FLASH/evaluation"
+    r"/home/marilyn/Downloads/Interaction-Readiness-Detection-Model-main/outputs/frameLevel_zeroShot/Qwen3-VL-8B-Instruct/evaluation"
 )
-"""
-
-PREDICTIONS_JSONL = Path(
-    r"/home/marilyn/Downloads/Interaction-Readiness-Detection-Model-main/outputs/Qwen_LoRA_frameLevel/Qwen3-VL-4B-Instruct/inference_results/predictions.jsonl"
-)
-
-OUTPUT_DIR = Path(
-    r"/home/marilyn/Downloads/Interaction-Readiness-Detection-Model-main/outputs/Qwen_LoRA_frameLevel/Qwen3-VL-4B-Instruct/inference_results/evaluation"
-)
-
 
 # A predicted box is a true-positive detection only when IoU is at least this.
 IOU_THRESHOLD = 0.50
@@ -687,17 +683,7 @@ def save_confusion_matrix(
     plt.close(figure)
 
 
-def main() -> None:
-    if not 0.0 <= IOU_THRESHOLD <= 1.0:
-        raise ValueError("IOU_THRESHOLD must be between 0 and 1.")
-
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-
-    print(f"Loading predictions: {PREDICTIONS_JSONL}")
-    records = load_prediction_records(PREDICTIONS_JSONL)
-
-    summary, matched_df, frame_df, all_iou_df = evaluate_records(records)
-
+def build_metric_tables(summary: dict[str, Any]) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     detection_df = pd.DataFrame(
         [
             {
@@ -745,14 +731,28 @@ def main() -> None:
     confusion_df.index.name = "ground_truth"
     confusion_df.columns.name = "predicted"
 
-    summary_path = OUTPUT_DIR / "evaluation_summary.json"
-    detection_path = OUTPUT_DIR / "detection_metrics.csv"
-    classification_path = OUTPUT_DIR / "classification_metrics.csv"
-    confusion_csv_path = OUTPUT_DIR / "confusion_matrix.csv"
-    confusion_png_path = OUTPUT_DIR / "confusion_matrix.png"
-    matched_path = OUTPUT_DIR / "matched_predictions.csv"
-    frame_path = OUTPUT_DIR / "frame_detection_details.csv"
-    all_iou_path = OUTPUT_DIR / "all_iou_pairs_before_hungarian.csv"
+    return detection_df, classification_df, confusion_df
+
+
+def save_evaluation_outputs(
+    summary: dict[str, Any],
+    matched_df: pd.DataFrame,
+    frame_df: pd.DataFrame,
+    all_iou_df: pd.DataFrame,
+    output_dir: Path,
+) -> None:
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    detection_df, classification_df, confusion_df = build_metric_tables(summary)
+
+    summary_path = output_dir / "evaluation_summary.json"
+    detection_path = output_dir / "detection_metrics.csv"
+    classification_path = output_dir / "classification_metrics.csv"
+    confusion_csv_path = output_dir / "confusion_matrix.csv"
+    confusion_png_path = output_dir / "confusion_matrix.png"
+    matched_path = output_dir / "matched_predictions.csv"
+    frame_path = output_dir / "frame_detection_details.csv"
+    all_iou_path = output_dir / "all_iou_pairs_before_hungarian.csv"
 
     with summary_path.open("w", encoding="utf-8") as file:
         json.dump(summary, file, indent=2)
@@ -772,8 +772,127 @@ def main() -> None:
         output_path=confusion_png_path,
     )
 
-    print("\nDetection metrics")
-    print("-----------------")
+
+def make_dataset_comparison_row(
+    source_dataset: str,
+    summary: dict[str, Any],
+) -> dict[str, Any]:
+    detection = summary["detection"]
+    classification = summary["classification"]
+
+    row = {
+        "source_dataset": source_dataset,
+        **detection,
+        "classification_num_matched_detections": classification[
+            "num_matched_detections_used_for_classification"
+        ],
+        "classification_accuracy": classification["accuracy"],
+        "classification_macro_f1": classification["macro_f1"],
+        "classification_weighted_f1": classification["weighted_f1"],
+    }
+
+    for class_metrics in classification["per_class"]:
+        class_name = class_metrics["class"]
+        row[f"{class_name}_precision"] = class_metrics["precision"]
+        row[f"{class_name}_recall"] = class_metrics["recall"]
+        row[f"{class_name}_f1"] = class_metrics["f1_score"]
+        row[f"{class_name}_support"] = class_metrics["support"]
+
+    return row
+
+def main() -> None:
+    if not 0.0 <= IOU_THRESHOLD <= 1.0:
+        raise ValueError("IOU_THRESHOLD must be between 0 and 1.")
+
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+    print(f"Loading predictions: {PREDICTIONS_JSONL}")
+    records = load_prediction_records(PREDICTIONS_JSONL)
+
+    # --------------------------------------------------------------------------
+    # 1. ORIGINAL OVERALL EVALUATION — all datasets together
+    # --------------------------------------------------------------------------
+    summary, matched_df, frame_df, all_iou_df = evaluate_records(records)
+
+    save_evaluation_outputs(
+        summary=summary,
+        matched_df=matched_df,
+        frame_df=frame_df,
+        all_iou_df=all_iou_df,
+        output_dir=OUTPUT_DIR,
+    )
+
+    _, classification_df, confusion_df = build_metric_tables(summary)
+
+    # --------------------------------------------------------------------------
+    # 2. PER-DATASET EVALUATION
+    # --------------------------------------------------------------------------
+    by_dataset_dir = OUTPUT_DIR / "by_dataset"
+    by_dataset_dir.mkdir(parents=True, exist_ok=True)
+
+    records_by_dataset: dict[str, list[dict[str, Any]]] = {}
+    for record in records:
+        source_dataset = str(record["source_dataset"])
+        records_by_dataset.setdefault(source_dataset, []).append(record)
+
+    dataset_summaries: dict[str, Any] = {}
+    dataset_comparison_rows: list[dict[str, Any]] = []
+
+    for source_dataset in sorted(records_by_dataset):
+        dataset_records = records_by_dataset[source_dataset]
+
+        (
+            dataset_summary,
+            dataset_matched_df,
+            dataset_frame_df,
+            dataset_all_iou_df,
+        ) = evaluate_records(dataset_records)
+
+        dataset_summaries[source_dataset] = dataset_summary
+        dataset_comparison_rows.append(
+            make_dataset_comparison_row(
+                source_dataset=source_dataset,
+                summary=dataset_summary,
+            )
+        )
+
+        # Make the folder name filesystem-safe while retaining the original
+        # dataset name inside every output row/summary.
+        safe_dataset_name = "".join(
+            character
+            if character.isalnum() or character in ("-", "_", ".")
+            else "_"
+            for character in source_dataset
+        ).strip("._")
+
+        if not safe_dataset_name:
+            safe_dataset_name = "unnamed_dataset"
+
+        dataset_output_dir = by_dataset_dir / safe_dataset_name
+
+        save_evaluation_outputs(
+            summary=dataset_summary,
+            matched_df=dataset_matched_df,
+            frame_df=dataset_frame_df,
+            all_iou_df=dataset_all_iou_df,
+            output_dir=dataset_output_dir,
+        )
+
+    dataset_comparison_df = pd.DataFrame(dataset_comparison_rows)
+
+    dataset_comparison_path = OUTPUT_DIR / "dataset_comparison.csv"
+    dataset_summary_path = OUTPUT_DIR / "evaluation_summary_by_dataset.json"
+
+    dataset_comparison_df.to_csv(dataset_comparison_path, index=False)
+
+    with dataset_summary_path.open("w", encoding="utf-8") as file:
+        json.dump(dataset_summaries, file, indent=2)
+
+    # --------------------------------------------------------------------------
+    # Console output
+    # --------------------------------------------------------------------------
+    print("\nOVERALL — Detection metrics")
+    print("---------------------------")
     print(
         f"Mean IoU:  "
         f"{summary['detection']['mean_iou_true_positive_matches']:.4f}"
@@ -791,8 +910,8 @@ def main() -> None:
         f"{summary['detection']['detection_f1']:.4f}"
     )
 
-    print("\nClassification metrics")
-    print("----------------------")
+    print("\nOVERALL — Classification metrics")
+    print("--------------------------------")
     print(
         f"Accuracy:    "
         f"{summary['classification']['accuracy']:.4f}"
@@ -806,21 +925,43 @@ def main() -> None:
         f"{summary['classification']['weighted_f1']:.4f}"
     )
 
-    print("\nPer-class metrics")
+    print("\nOVERALL — Per-class metrics")
     print(classification_df.to_string(index=False))
 
-    print("\nConfusion matrix")
+    print("\nOVERALL — Confusion matrix")
     print(confusion_df.to_string())
 
-    print("\nSaved outputs:")
-    print(f"  {summary_path}")
-    print(f"  {detection_path}")
-    print(f"  {classification_path}")
-    print(f"  {confusion_csv_path}")
-    print(f"  {confusion_png_path}")
-    print(f"  {matched_path}")
-    print(f"  {frame_path}")
-    print(f"  {all_iou_path}")
+    print("\nPER-DATASET SUMMARY")
+    print("-------------------")
+    display_columns = [
+        "source_dataset",
+        "num_frames",
+        "num_ground_truth_boxes",
+        "num_predicted_boxes",
+        "mean_iou_true_positive_matches",
+        "detection_precision",
+        "detection_recall",
+        "detection_f1",
+        "classification_accuracy",
+        "classification_macro_f1",
+        "classification_weighted_f1",
+    ]
+    print(
+        dataset_comparison_df[display_columns].to_string(
+            index=False,
+            float_format=lambda value: f"{value:.4f}",
+        )
+    )
+
+    print("\nSaved original overall outputs in:")
+    print(f"  {OUTPUT_DIR}")
+
+    print("\nSaved per-dataset outputs in:")
+    print(f"  {by_dataset_dir}")
+
+    print("\nSaved dataset comparison files:")
+    print(f"  {dataset_comparison_path}")
+    print(f"  {dataset_summary_path}")
 
 
 if __name__ == "__main__":

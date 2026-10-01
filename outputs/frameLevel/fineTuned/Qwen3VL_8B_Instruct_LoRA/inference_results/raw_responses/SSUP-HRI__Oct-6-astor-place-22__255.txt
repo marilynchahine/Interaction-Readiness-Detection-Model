@@ -1,0 +1,1 @@
+{"people":[{"person_id":1,"bbox":[836.83,427.21,1027.83,767.25],"label":"interaction_ready"}]}

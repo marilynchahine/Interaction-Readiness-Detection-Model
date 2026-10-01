@@ -1,0 +1,169 @@
+{
+  "source_dataset": "SSUP-HRI",
+  "video_id": "Sep-21-astor-place-15",
+  "frame_id": 410,
+  "ground_truth_people": [
+    {
+      "person_id": 1,
+      "bbox_xyxy": [
+        814.87,
+        409.14,
+        1036.68,
+        666.69
+      ],
+      "label_original": "interaction_ready",
+      "label_3class": "interaction_ready"
+    }
+  ],
+  "predicted_people": [
+    {
+      "person_id": 1,
+      "bbox_2d": [
+        0.0,
+        0.0,
+        576.0,
+        1080.0
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        0.0,
+        0.0,
+        300.0,
+        1000.0
+      ]
+    },
+    {
+      "person_id": 2,
+      "bbox_2d": [
+        576.0,
+        324.0,
+        1152.0,
+        1080.0
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        300.0,
+        300.0,
+        600.0,
+        1000.0
+      ]
+    },
+    {
+      "person_id": 3,
+      "bbox_2d": [
+        1132.8,
+        324.0,
+        1708.8,
+        1080.0
+      ],
+      "label": "interaction_ready",
+      "bbox_normalized_1000": [
+        590.0,
+        300.0,
+        890.0,
+        1000.0
+      ]
+    },
+    {
+      "person_id": 4,
+      "bbox_2d": [
+        1708.8,
+        324.0,
+        1920.0,
+        1080.0
+      ],
+      "label": "not_interaction_ready",
+      "bbox_normalized_1000": [
+        890.0,
+        300.0,
+        1190.0,
+        1000.0
+      ]
+    }
+  ],
+  "image_error": null,
+  "parse_error": "ValueError: people[4] produced a zero-area bbox.",
+  "frame_group": 156,
+  "split": "Test",
+  "source_json": "SSUP-HRI__Sep-21-astor-place-15__group_000156.json",
+  "model": "Qwen/Qwen3-VL-2B-Instruct",
+  "zero_shot": true,
+  "context_frame_numbers": [
+    395,
+    396,
+    397,
+    398,
+    399,
+    400,
+    401,
+    402,
+    403,
+    404,
+    405,
+    406,
+    407,
+    408,
+    409
+  ],
+  "target_frame_number": 410,
+  "target_image_width": 1920,
+  "target_image_height": 1080,
+  "raw_model_response": "{\n  \"people\": [\n    {\n      \"person_ID\": 1,\n      \"bbox\": [0, 0, 300, 1000],\n      \"label\": \"interaction_ready\"\n    },\n    {\n      \"person_ID\": 2,\n      \"bbox\": [300, 300, 600, 1000],\n      \"label\": \"interaction_ready\"\n    },\n    {\n      \"person_ID\": 3,\n      \"bbox\": [590, 300, 890, 1000],\n      \"label\": \"interaction_ready\"\n    },\n    {\n      \"person_ID\": 4,\n      \"bbox\": [890, 300, 1190, 1000],\n      \"label\": \"not_interaction_ready\"\n    },\n    {\n      \"person_ID\": 5,\n      \"bbox\": [1190, 300, 1490, 1000],\n      \"label\": \"not_interaction_ready\"\n    }\n  ]\n}",
+  "parsed_model_response": {
+    "people": [
+      {
+        "person_ID": 1,
+        "bbox": [
+          0,
+          0,
+          300,
+          1000
+        ],
+        "label": "interaction_ready"
+      },
+      {
+        "person_ID": 2,
+        "bbox": [
+          300,
+          300,
+          600,
+          1000
+        ],
+        "label": "interaction_ready"
+      },
+      {
+        "person_ID": 3,
+        "bbox": [
+          590,
+          300,
+          890,
+          1000
+        ],
+        "label": "interaction_ready"
+      },
+      {
+        "person_ID": 4,
+        "bbox": [
+          890,
+          300,
+          1190,
+          1000
+        ],
+        "label": "not_interaction_ready"
+      },
+      {
+        "person_ID": 5,
+        "bbox": [
+          1190,
+          300,
+          1490,
+          1000
+        ],
+        "label": "not_interaction_ready"
+      }
+    ]
+  },
+  "person_parse_errors": [
+    "ValueError: people[4] produced a zero-area bbox."
+  ]
+}
