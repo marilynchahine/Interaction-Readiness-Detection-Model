@@ -8,8 +8,5 @@ docker compose up -d
 Open http://localhost:8080 (or your CVAT_HOST) in your browser.
 
 Log in with your superuser account.
-marilynchahine
-marilyn.chahine@etu.sorbonne-universite.fr
-CVAT170801!
 
 Create a project or task, upload your data (images, videos, or point clouds), and define labels to start annotating.
