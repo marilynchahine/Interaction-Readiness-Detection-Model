@@ -1,5 +1,0 @@
-{"people":[
-{"person_ID":1,"bbox":[228,388,325,583],"label":"interaction_ready"},
-{"person_ID":2,"bbox":[325,388,425,583],"label":"interaction_ready"},
-{"person_ID":3,"bbox":[425,375,525,583],"label":"interaction_ongoing"}
-]}

@@ -1,5 +1,0 @@
-class,precision,recall,f1_score,support,accuracy,macro_f1,weighted_f1
-not_interaction_ready,1.0,0.9166666666666666,0.9565217391304348,24,,,
-interaction_ready,0.9974683544303797,1.0,0.9987325728770595,788,,,
-interaction_ongoing,0.0,0.0,0.0,0,,,
-OVERALL,,,,812,0.9975369458128078,0.6517514373358314,0.9974849620274057

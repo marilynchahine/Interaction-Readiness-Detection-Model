@@ -1,4 +1,0 @@
-{"people":[
-{"person_ID":1,"bbox":[437, 343, 550, 550],"label":"interaction_ready"},
-{"person_ID":2,"bbox":[0, 0, 375, 500],"label":"interaction_ongoing"}
-]}
