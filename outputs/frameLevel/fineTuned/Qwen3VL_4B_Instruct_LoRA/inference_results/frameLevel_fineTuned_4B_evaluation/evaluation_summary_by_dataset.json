@@ -1,0 +1,209 @@
+{
+  "AVIDAR": {
+    "detection": {
+      "iou_threshold": 0.5,
+      "num_frames": 275,
+      "num_ground_truth_boxes": 484,
+      "num_predicted_boxes": 484,
+      "true_positives": 484,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "mean_iou_true_positive_matches": 0.9090174622106832,
+      "median_iou_true_positive_matches": 0.921302859513848,
+      "detection_precision": 1.0,
+      "detection_recall": 1.0,
+      "detection_f1": 1.0,
+      "frames_with_image_error": 0,
+      "frames_with_parse_error": 0
+    },
+    "classification": {
+      "num_matched_detections_used_for_classification": 484,
+      "accuracy": 0.30578512396694213,
+      "macro_f1": 0.15611814345991562,
+      "weighted_f1": 0.40448791714614496,
+      "per_class": [
+        {
+          "class": "not_interaction_ready",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 66
+        },
+        {
+          "class": "interaction_ready",
+          "precision": 0.6915887850467289,
+          "recall": 0.35406698564593303,
+          "f1_score": 0.46835443037974683,
+          "support": 418
+        },
+        {
+          "class": "interaction_ongoing",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 0
+        }
+      ],
+      "confusion_matrix_labels": [
+        "not_interaction_ready",
+        "interaction_ready",
+        "interaction_ongoing"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          66,
+          0
+        ],
+        [
+          270,
+          148,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "JRDB": {
+    "detection": {
+      "iou_threshold": 0.5,
+      "num_frames": 397,
+      "num_ground_truth_boxes": 843,
+      "num_predicted_boxes": 725,
+      "true_positives": 338,
+      "false_positives": 387,
+      "false_negatives": 505,
+      "mean_iou_true_positive_matches": 0.709996316571903,
+      "median_iou_true_positive_matches": 0.709198215282286,
+      "detection_precision": 0.46620689655172415,
+      "detection_recall": 0.40094899169632264,
+      "detection_f1": 0.43112244897959184,
+      "frames_with_image_error": 0,
+      "frames_with_parse_error": 0
+    },
+    "classification": {
+      "num_matched_detections_used_for_classification": 338,
+      "accuracy": 1.0,
+      "macro_f1": 0.3333333333333333,
+      "weighted_f1": 1.0,
+      "per_class": [
+        {
+          "class": "not_interaction_ready",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 338
+        },
+        {
+          "class": "interaction_ready",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 0
+        },
+        {
+          "class": "interaction_ongoing",
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 0
+        }
+      ],
+      "confusion_matrix_labels": [
+        "not_interaction_ready",
+        "interaction_ready",
+        "interaction_ongoing"
+      ],
+      "confusion_matrix": [
+        [
+          338,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "SSUP-HRI": {
+    "detection": {
+      "iou_threshold": 0.5,
+      "num_frames": 1714,
+      "num_ground_truth_boxes": 1714,
+      "num_predicted_boxes": 1805,
+      "true_positives": 1680,
+      "false_positives": 125,
+      "false_negatives": 34,
+      "mean_iou_true_positive_matches": 0.8763702235852455,
+      "median_iou_true_positive_matches": 0.8848887791388826,
+      "detection_precision": 0.9307479224376731,
+      "detection_recall": 0.9801633605600933,
+      "detection_f1": 0.9548167092924126,
+      "frames_with_image_error": 0,
+      "frames_with_parse_error": 0
+    },
+    "classification": {
+      "num_matched_detections_used_for_classification": 1680,
+      "accuracy": 0.4767857142857143,
+      "macro_f1": 0.3568692573207246,
+      "weighted_f1": 0.41436585454926317,
+      "per_class": [
+        {
+          "class": "not_interaction_ready",
+          "precision": 0.38095238095238093,
+          "recall": 0.06387225548902195,
+          "f1_score": 0.1094017094017094,
+          "support": 501
+        },
+        {
+          "class": "interaction_ready",
+          "precision": 0.5056689342403629,
+          "recall": 0.75,
+          "f1_score": 0.6040632054176073,
+          "support": 892
+        },
+        {
+          "class": "interaction_ongoing",
+          "precision": 0.3663003663003663,
+          "recall": 0.34843205574912894,
+          "f1_score": 0.35714285714285715,
+          "support": 287
+        }
+      ],
+      "confusion_matrix_labels": [
+        "not_interaction_ready",
+        "interaction_ready",
+        "interaction_ongoing"
+      ],
+      "confusion_matrix": [
+        [
+          32,
+          468,
+          1
+        ],
+        [
+          51,
+          669,
+          172
+        ],
+        [
+          1,
+          186,
+          100
+        ]
+      ]
+    }
+  }
+}

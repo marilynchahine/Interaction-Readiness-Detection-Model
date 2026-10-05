@@ -1,0 +1,4 @@
+ground_truth,not_interaction_ready,interaction_ready,interaction_ongoing
+not_interaction_ready,53,392,0
+interaction_ready,33,849,22
+interaction_ongoing,1,285,0
