@@ -53,15 +53,6 @@ JRDB already contained skeleton data, ultralytics was skipped and the bounding b
 
 
 
-## SSUP-HRI-Specific Instructions
-
-## MuMMER-Specific Instructions
-
-## UE-HRI-Specific Instructions
-
-## Privacy & Ethics
-
-
 ## Other Information/Scripts
 
 data_stats.py calculates statistics related to a specified dataset:
